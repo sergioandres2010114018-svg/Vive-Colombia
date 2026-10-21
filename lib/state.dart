@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,6 +22,12 @@ class AppState extends ChangeNotifier {
   Map<String, dynamic> perfil = {};
 
   bool firebaseListo = false;
+
+  /// Ya se sabe si hay sesión (o Firebase no respondió): se puede decidir qué pantalla mostrar.
+  bool sesionLista = false;
+
+  /// El usuario eligió "Explorar sin cuenta".
+  bool invitado = false;
   User? usuario;
   bool esAdmin = false;
 
@@ -36,6 +44,14 @@ class AppState extends ChangeNotifier {
     _p = await SharedPreferences.getInstance();
     favs = _p!.getStringList('favs') ?? [];
     ruta = _p!.getStringList('ruta') ?? [];
+    invitado = _p!.getBool('invitado') ?? false;
+    // Si Firebase tarda demasiado (sin internet), no dejar al usuario en la pantalla de carga.
+    Timer(const Duration(seconds: 6), () {
+      if (!sesionLista) {
+        sesionLista = true;
+        notifyListeners();
+      }
+    });
     final s = _p!.getString('perfil');
     if (s != null) {
       try {
@@ -60,6 +76,7 @@ class AppState extends ChangeNotifier {
   Future<void> _alCambiarSesion(User? u) async {
     usuario = u;
     esAdmin = false;
+    sesionLista = true;
     notifyListeners();
     if (u == null) return;
     try {
@@ -178,8 +195,41 @@ class AppState extends ChangeNotifier {
   }
 
   Future<void> salir() async {
+    invitado = false;
+    _p?.setBool('invitado', false);
     await FirebaseAuth.instance.signOut();
   }
+
+  void entrarComoInvitado() {
+    invitado = true;
+    _p?.setBool('invitado', true);
+    notifyListeners();
+  }
+
+  void irAlLogin() {
+    invitado = false;
+    _p?.setBool('invitado', false);
+    notifyListeners();
+  }
+
+  /// Sube una foto a Firebase Storage y devuelve su enlace público.
+  Future<String> subirFoto(String lugarId, Uint8List bytes) async {
+    if (!esAdmin) throw Exception('Tu cuenta no tiene permiso de administrador.');
+    final nombre = '${DateTime.now().millisecondsSinceEpoch}.jpg';
+    final ref = FirebaseStorage.instance.ref('lugares/${lugarId.replaceAll(':', '_')}/$nombre');
+    await ref.putData(bytes, SettableMetadata(contentType: 'image/jpeg', cacheControl: 'public,max-age=604800'));
+    return ref.getDownloadURL();
+  }
+
+  /// Borra una foto de Storage (si falla, solo se quita de la lista).
+  Future<void> borrarFoto(String url) async {
+    try {
+      await FirebaseStorage.instance.refFromURL(url).delete();
+    } catch (_) {}
+  }
+
+  /// Id nuevo para un lugar que aún no existe.
+  String nuevoId() => db.collection('lugares').doc().id;
 
   String _msg(String code) {
     switch (code) {
@@ -207,9 +257,7 @@ class AppState extends ChangeNotifier {
   // ---------------- panel de administración
   Future<String?> guardarLugar(String? id, Map<String, dynamic> datos) async {
     if (!esAdmin) return 'Tu cuenta no tiene permiso de administrador.';
-    final ref = id == null
-        ? db.collection('lugares').doc()
-        : db.collection('lugares').doc(id);
+    final ref = db.collection('lugares').doc(id ?? nuevoId());
     try {
       await ref.set({
         ...datos,

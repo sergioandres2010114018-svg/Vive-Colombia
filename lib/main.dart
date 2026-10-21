@@ -30,7 +30,15 @@ class ViveColombiaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
-      home: const Inicio(),
+      home: ListenableBuilder(
+        listenable: AppState.i,
+        builder: (context, _) {
+          final st = AppState.i;
+          if (!st.sesionLista) return const CargaScreen();
+          if (st.usuario == null && !st.invitado) return const LoginScreen();
+          return const Inicio();
+        },
+      ),
     );
   }
 }

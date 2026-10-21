@@ -52,6 +52,7 @@ class Muni {
 class Item {
   final String id, c, n, d, tip, dep, foto, video, munNombre;
   final String? muni;
+  final List<String> fotos;
   final int? m;
   final double? lat, lon;
   final bool nuevo, editado;
@@ -67,6 +68,7 @@ class Item {
     this.video = '',
     this.munNombre = '',
     this.muni,
+    this.fotos = const [],
     this.m,
     this.lat,
     this.lon,
@@ -87,6 +89,7 @@ class Item {
       video: _str(j['video']),
       munNombre: _str(j['munNombre']),
       muni: (mu is String && mu.isNotEmpty) ? mu : null,
+      fotos: j['fotos'] is List ? (j['fotos'] as List).whereType<String>().where((u) => u.isNotEmpty).toList() : const [],
       m: (j['m'] as num?)?.toInt(),
       lat: _num(j['lat']),
       lon: _num(j['lon']),
@@ -105,12 +108,16 @@ class Item {
         'video': video,
         'munNombre': munNombre,
         'muni': muni ?? '',
+        'fotos': fotos,
         if (m != null) 'm': m,
         if (lat != null) 'lat': lat,
         if (lon != null) 'lon': lon,
       };
 
   bool get tieneCoord => lat != null && lon != null;
+
+  /// Fotos propias (Firebase Storage) más el enlace manual, si lo hay.
+  List<String> get todasFotos => [...fotos, if (foto.isNotEmpty && !fotos.contains(foto)) foto];
 
   /// Municipio al que pertenece: uno base o uno escrito a mano en el panel.
   String? get muniId => muni ?? (munNombre.isNotEmpty ? 'x-${Catalogo.slug(munNombre)}' : null);

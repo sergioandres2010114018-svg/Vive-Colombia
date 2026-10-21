@@ -243,7 +243,13 @@ class ItemTile extends StatelessWidget {
                     color: cs.surfaceContainerHighest, borderRadius: BorderRadius.circular(12)),
                 child: Text(meses[i.m! - 1], style: const TextStyle(fontWeight: FontWeight.w800)),
               )
-            : IconoCat(i.c),
+            : i.todasFotos.isNotEmpty
+                ? ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(i.todasFotos.first,
+                        width: 44, height: 44, fit: BoxFit.cover, errorBuilder: (_, __, ___) => IconoCat(i.c)),
+                  )
+                : IconoCat(i.c),
         title: Text(i.n, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text(mostrarLugar ? Catalogo.lugarDe(i) : i.d,
             maxLines: 2, overflow: TextOverflow.ellipsis),
@@ -395,7 +401,7 @@ String urlVideos(Item i) => i.video.isNotEmpty
     : 'https://www.youtube.com/results?search_query=${Uri.encodeComponent('${i.n} ${Catalogo.lugarDe(i)}')}';
 
 void mostrarItem(BuildContext context, Item i) {
-  final conFoto = i.foto.isNotEmpty || i.c == 'sitio' || i.c == 'cultura';
+  final conFoto = i.todasFotos.isNotEmpty || i.c == 'sitio' || i.c == 'cultura';
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -414,7 +420,9 @@ void mostrarItem(BuildContext context, Item i) {
             if (conFoto)
               ClipRRect(
                 borderRadius: BorderRadius.circular(14),
-                child: Foto(url: i.foto, wiki: wiki, height: 190),
+                child: i.todasFotos.isNotEmpty
+                    ? Galeria(i.todasFotos, height: 220)
+                    : Foto(url: '', wiki: wiki, height: 190),
               ),
             const SizedBox(height: 10),
             Wrap(spacing: 6, children: [
@@ -498,4 +506,79 @@ void mostrarItem(BuildContext context, Item i) {
       },
     ),
   );
+}
+
+/// Carrusel de fotos propias del lugar.
+class Galeria extends StatefulWidget {
+  const Galeria(this.fotos, {super.key, this.height = 220});
+  final List<String> fotos;
+  final double height;
+  @override
+  State<Galeria> createState() => _GaleriaState();
+}
+
+class _GaleriaState extends State<Galeria> {
+  int actual = 0;
+  @override
+  Widget build(BuildContext context) {
+    final n = widget.fotos.length;
+    return SizedBox(
+      height: widget.height,
+      child: Stack(children: [
+        PageView.builder(
+          itemCount: n,
+          onPageChanged: (k) => setState(() => actual = k),
+          itemBuilder: (context, k) => GestureDetector(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => _FotoCompleta(widget.fotos, k))),
+            child: Image.network(
+              widget.fotos[k],
+              fit: BoxFit.cover,
+              width: double.infinity,
+              errorBuilder: (_, __, ___) => const Center(child: Icon(Icons.broken_image, size: 40)),
+              loadingBuilder: (c, child, p) => p == null
+                  ? child
+                  : ColoredBox(
+                      color: Theme.of(c).colorScheme.surfaceContainerHighest,
+                      child: const Center(child: CircularProgressIndicator())),
+            ),
+          ),
+        ),
+        if (n > 1)
+          Positioned(
+            bottom: 8,
+            left: 0,
+            right: 0,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              for (var k = 0; k < n; k++)
+                Container(
+                  width: k == actual ? 18 : 7,
+                  height: 7,
+                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  decoration: BoxDecoration(
+                    color: k == actual ? kSol : Colors.white70,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+            ]),
+          ),
+      ]),
+    );
+  }
+}
+
+class _FotoCompleta extends StatelessWidget {
+  const _FotoCompleta(this.fotos, this.inicial);
+  final List<String> fotos;
+  final int inicial;
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(backgroundColor: Colors.black, foregroundColor: Colors.white),
+        body: PageView.builder(
+          controller: PageController(initialPage: inicial),
+          itemCount: fotos.length,
+          itemBuilder: (_, k) => InteractiveViewer(child: Center(child: Image.network(fotos[k]))),
+        ),
+      );
 }

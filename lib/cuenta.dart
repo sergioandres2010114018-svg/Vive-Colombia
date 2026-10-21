@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'data.dart';
 import 'screens.dart';
@@ -7,6 +8,93 @@ import 'state.dart';
 import 'ui.dart';
 
 const _pad = EdgeInsets.fromLTRB(16, 8, 16, 32);
+
+// ---------------------------------------------------------------- Login
+const _creditos = 'Creado por Estudiantes IE Pijiño';
+
+class _Pie extends StatelessWidget {
+  const _Pie();
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Column(children: [
+      const SizedBox(width: 120, child: Bandera()),
+      const SizedBox(height: 10),
+      Text(_creditos,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.w700, color: cs.onSurface)),
+      const SizedBox(height: 2),
+      Text('Institución Educativa Técnica Departamental Pijiño del Carmen · SENA',
+          textAlign: TextAlign.center, style: TextStyle(fontSize: 11, color: cs.onSurfaceVariant)),
+    ]);
+  }
+}
+
+class _Logo extends StatelessWidget {
+  const _Logo();
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        child: Image.asset('assets/logo.png', width: 250),
+      );
+}
+
+/// Pantalla mientras se confirma si hay sesión iniciada.
+class CargaScreen extends StatelessWidget {
+  const CargaScreen({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(
+        body: SafeArea(
+          child: Column(children: [
+            Spacer(),
+            _Logo(),
+            SizedBox(height: 24),
+            SizedBox(width: 28, height: 28, child: CircularProgressIndicator(strokeWidth: 3)),
+            Spacer(),
+            Padding(padding: EdgeInsets.only(bottom: 20), child: _Pie()),
+          ]),
+        ),
+      );
+}
+
+/// Primera pantalla de la app: iniciar sesión, crear cuenta o explorar sin cuenta.
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Scaffold(
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, c) => SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 24, 20, 20),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: c.maxHeight - 44),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                const Center(child: _Logo()),
+                const SizedBox(height: 12),
+                Text('Descubre la esencia de Colombia en un solo lugar',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontStyle: FontStyle.italic, color: cs.onSurfaceVariant)),
+                const SizedBox(height: 8),
+                const FormularioAcceso(),
+                const SizedBox(height: 4),
+                OutlinedButton.icon(
+                  onPressed: AppState.i.entrarComoInvitado,
+                  icon: const Icon(Icons.explore_outlined),
+                  label: const Text('Explorar sin cuenta'),
+                ),
+                const SizedBox(height: 28),
+                const _Pie(),
+              ]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 // ---------------------------------------------------------------- Perfil
 class PerfilScreen extends StatelessWidget {
@@ -22,7 +110,7 @@ class PerfilScreen extends StatelessWidget {
           final st = AppState.i;
           final u = st.usuario;
           return ListView(padding: _pad, children: [
-            if (u == null) const _Acceso() else _Cuenta(key: ValueKey(u.uid)),
+            if (u == null) const FormularioAcceso() else _Cuenta(key: ValueKey(u.uid)),
             const Titulo('Más'),
             Lista([
               if (u != null)
@@ -44,6 +132,8 @@ class PerfilScreen extends StatelessWidget {
                     context, MaterialPageRoute(builder: (_) => const AcercaScreen())),
               ),
             ]),
+            const SizedBox(height: 28),
+            const _Pie(),
           ]);
         },
       ),
@@ -52,13 +142,13 @@ class PerfilScreen extends StatelessWidget {
 }
 
 /// Inicio de sesión y registro con correo.
-class _Acceso extends StatefulWidget {
-  const _Acceso();
+class FormularioAcceso extends StatefulWidget {
+  const FormularioAcceso({super.key});
   @override
-  State<_Acceso> createState() => _AccesoState();
+  State<FormularioAcceso> createState() => FormularioAccesoState();
 }
 
-class _AccesoState extends State<_Acceso> {
+class FormularioAccesoState extends State<FormularioAcceso> {
   final _form = GlobalKey<FormState>();
   final nombre = TextEditingController();
   final correo = TextEditingController();
@@ -415,8 +505,40 @@ class _EditorState extends State<EditorScreen> {
   late String dep = i?.dep ?? widget.dep;
   late String muni = i?.muni ?? (i != null && i!.munNombre.isNotEmpty ? '__otro' : (widget.mu ?? ''));
   late int? mes = i?.m;
-  bool guardando = false, confirmar = false;
+  bool guardando = false, confirmar = false, subiendo = false;
   String? error;
+  late final String docId = i?.id ?? AppState.i.nuevoId();
+  late final List<String> fotos = [...?i?.fotos];
+  final List<String> porBorrar = [];
+
+  Future<void> agregarFoto(ImageSource origen) async {
+    try {
+      final x = await ImagePicker().pickImage(source: origen, maxWidth: 1600, maxHeight: 1600, imageQuality: 80);
+      if (x == null) return;
+      setState(() {
+        subiendo = true;
+        error = null;
+      });
+      final bytes = await x.readAsBytes();
+      final url = await AppState.i.subirFoto(docId, bytes);
+      if (!mounted) return;
+      setState(() {
+        fotos.add(url);
+        subiendo = false;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        subiendo = false;
+        error = 'No se pudo subir la foto. Revisa tu conexión y que Storage esté activado en Firebase.';
+      });
+    }
+  }
+
+  void quitarFoto(String url) => setState(() {
+        fotos.remove(url);
+        porBorrar.add(url);
+      });
 
   bool get esBase => i != null && !i!.nuevo;
 
@@ -456,6 +578,7 @@ class _EditorState extends State<EditorScreen> {
       'd': d.text.trim(),
       'tip': tip.text.trim(),
       'foto': foto.text.trim(),
+      'fotos': fotos,
       'video': video.text.trim(),
       'dep': esBase ? i!.dep : dep,
       'muni': esBase ? (i!.muni ?? '') : (muni == '__otro' ? '' : muni),
@@ -468,9 +591,12 @@ class _EditorState extends State<EditorScreen> {
       guardando = true;
       error = null;
     });
-    final e = await AppState.i.guardarLugar(i?.id, datos);
+    final e = await AppState.i.guardarLugar(docId, datos);
     if (!mounted) return;
     if (e == null) {
+      for (final u in porBorrar) {
+        AppState.i.borrarFoto(u);
+      }
       Navigator.pop(context);
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(i == null ? 'Lugar publicado' : 'Cambios guardados')));
@@ -559,17 +685,71 @@ class _EditorState extends State<EditorScreen> {
           gap,
           TextFormField(controller: tip, decoration: _dec('Consejo para el viajero (opcional)')),
           gap,
+          const Text('Fotos del lugar', style: TextStyle(fontWeight: FontWeight.w700)),
+          const SizedBox(height: 6),
+          SizedBox(
+            height: 104,
+            child: ListView(scrollDirection: Axis.horizontal, children: [
+              for (final u in fotos)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: Stack(children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(u, width: 104, height: 104, fit: BoxFit.cover,
+                          errorBuilder: (_, __, ___) => const SizedBox(width: 104, height: 104, child: Icon(Icons.broken_image))),
+                    ),
+                    Positioned(
+                      top: 4,
+                      right: 4,
+                      child: InkWell(
+                        onTap: () => quitarFoto(u),
+                        child: const CircleAvatar(
+                            radius: 13, backgroundColor: Colors.black54, child: Icon(Icons.close, size: 16, color: Colors.white)),
+                      ),
+                    ),
+                  ]),
+                ),
+              if (subiendo)
+                const SizedBox(width: 104, child: Center(child: CircularProgressIndicator())),
+              if (fotos.isEmpty && !subiendo)
+                const Center(child: Text('Todavía no hay fotos propias de este lugar.')),
+            ]),
+          ),
+          const SizedBox(height: 8),
+          Row(children: [
+            Expanded(
+              child: OutlinedButton.icon(
+                onPressed: subiendo ? null : () => agregarFoto(ImageSource.camera),
+                icon: const Icon(Icons.photo_camera_outlined),
+                label: const Text('Tomar foto'),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: OutlinedButton.icon(
+                onPressed: subiendo ? null : () => agregarFoto(ImageSource.gallery),
+                icon: const Icon(Icons.photo_library_outlined),
+                label: const Text('Galería'),
+              ),
+            ),
+          ]),
+          const Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: Text('Las fotos se guardan en Firebase Storage. Recuerda tocar “Guardar cambios” al final.',
+                style: TextStyle(fontSize: 12)),
+          ),
+          gap,
           TextFormField(
             controller: foto,
             keyboardType: TextInputType.url,
-            decoration: _dec('Enlace de la foto (opcional)', hint: 'https://…'),
+            decoration: _dec('O enlace de una foto en internet (opcional)', hint: 'https://…'),
             validator: _url,
           ),
           const Padding(
             padding: EdgeInsets.only(top: 4),
             child: Text(
-                'Sube la foto a internet (por ejemplo, Wikimedia Commons o un enlace público de imagen) y pega aquí el enlace directo. '
-                'Si lo dejas vacío, la app busca una foto en Wikipedia.',
+                'Si el lugar no tiene fotos propias ni enlace, la app busca una foto en Wikipedia.',
                 style: TextStyle(fontSize: 12)),
           ),
           if (foto.text.trim().startsWith('https://')) ...[
@@ -627,7 +807,7 @@ class _EditorState extends State<EditorScreen> {
             ),
           const SizedBox(height: 16),
           FilledButton(
-            onPressed: guardando ? null : guardar,
+            onPressed: (guardando || subiendo) ? null : guardar,
             child: Text(guardando ? 'Guardando…' : (i == null ? 'Publicar lugar' : 'Guardar cambios')),
           ),
           if (i != null) ...[
