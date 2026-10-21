@@ -1,0 +1,2660 @@
+{
+ "deptos": [
+  {
+   "k": "co-am",
+   "n": "Amazonas",
+   "cap": "Leticia",
+   "r": "amazonia",
+   "lat": -4.215,
+   "lon": -69.94,
+   "intro": "Selva, ríos inmensos y la triple frontera con Brasil y Perú. Leticia es la puerta de entrada al Amazonas colombiano."
+  },
+  {
+   "k": "co-an",
+   "n": "Antioquia",
+   "cap": "Medellín",
+   "r": "andina",
+   "lat": 6.244,
+   "lon": -75.581,
+   "intro": "Montañas, pueblos de balcones coloridos y una capital que se reinventó con innovación y metro cable."
+  },
+  {
+   "k": "co-ar",
+   "n": "Arauca",
+   "cap": "Arauca",
+   "r": "orinoquia",
+   "lat": 7.084,
+   "lon": -70.759,
+   "intro": "Llano abierto en la frontera con Venezuela, de hatos ganaderos, coleo y joropo."
+  },
+  {
+   "k": "co-at",
+   "n": "Atlántico",
+   "cap": "Barranquilla",
+   "r": "caribe",
+   "lat": 10.964,
+   "lon": -74.796,
+   "intro": "Donde el río Magdalena llega al mar. Tierra del Carnaval y de la alegría caribeña."
+  },
+  {
+   "k": "co-bl",
+   "n": "Bolívar",
+   "cap": "Cartagena",
+   "r": "caribe",
+   "lat": 10.391,
+   "lon": -75.479,
+   "intro": "Murallas, islas y pueblos patrimonio. Cartagena y Mompox guardan la historia colonial del Caribe."
+  },
+  {
+   "k": "co-by",
+   "n": "Boyacá",
+   "cap": "Tunja",
+   "r": "andina",
+   "lat": 5.535,
+   "lon": -73.367,
+   "intro": "Tierra de la independencia, pueblos coloniales, lagos de páramo y nevados."
+  },
+  {
+   "k": "co-cl",
+   "n": "Caldas",
+   "cap": "Manizales",
+   "r": "andina",
+   "lat": 5.067,
+   "lon": -75.517,
+   "intro": "Corazón del Paisaje Cultural Cafetero, entre montañas y nevados."
+  },
+  {
+   "k": "co-cq",
+   "n": "Caquetá",
+   "cap": "Florencia",
+   "r": "amazonia",
+   "lat": 1.614,
+   "lon": -75.606,
+   "intro": "Donde los Andes se encuentran con la selva amazónica."
+  },
+  {
+   "k": "co-cs",
+   "n": "Casanare",
+   "cap": "Yopal",
+   "r": "orinoquia",
+   "lat": 5.337,
+   "lon": -72.395,
+   "intro": "Sabanas infinitas, hatos y fauna silvestre. El llano en su máxima expresión."
+  },
+  {
+   "k": "co-ca",
+   "n": "Cauca",
+   "cap": "Popayán",
+   "r": "pacifica",
+   "lat": 2.444,
+   "lon": -76.614,
+   "intro": "La ciudad blanca, la Semana Santa más famosa del país y parques arqueológicos."
+  },
+  {
+   "k": "co-ce",
+   "n": "Cesar",
+   "cap": "Valledupar",
+   "r": "caribe",
+   "lat": 10.463,
+   "lon": -73.253,
+   "intro": "Cuna del vallenato, al pie de la Sierra Nevada y la Serranía del Perijá."
+  },
+  {
+   "k": "co-ch",
+   "n": "Chocó",
+   "cap": "Quibdó",
+   "r": "pacifica",
+   "lat": 5.694,
+   "lon": -76.661,
+   "intro": "Selva, ríos y mar Pacífico. Una de las regiones más biodiversas del planeta."
+  },
+  {
+   "k": "co-co",
+   "n": "Córdoba",
+   "cap": "Montería",
+   "r": "caribe",
+   "lat": 8.748,
+   "lon": -75.881,
+   "intro": "Sabanas, el río Sinú y el sombrero vueltiao, símbolo cultural de Colombia."
+  },
+  {
+   "k": "co-cu",
+   "n": "Cundinamarca",
+   "cap": "Bogotá",
+   "r": "andina",
+   "lat": 4.711,
+   "lon": -74.072,
+   "intro": "Rodea la capital del país con lagunas sagradas, minas de sal y pueblos de sabana."
+  },
+  {
+   "k": "co-gn",
+   "n": "Guainía",
+   "cap": "Inírida",
+   "r": "amazonia",
+   "lat": 3.865,
+   "lon": -67.924,
+   "intro": "Ríos de aguas negras, cerros milenarios y la flor de Inírida."
+  },
+  {
+   "k": "co-gv",
+   "n": "Guaviare",
+   "cap": "San José del Guaviare",
+   "r": "amazonia",
+   "lat": 2.57,
+   "lon": -72.645,
+   "intro": "Arte rupestre milenario y formaciones de roca en la transición entre llano y selva."
+  },
+  {
+   "k": "co-hu",
+   "n": "Huila",
+   "cap": "Neiva",
+   "r": "andina",
+   "lat": 2.927,
+   "lon": -75.282,
+   "intro": "Estatuas de piedra milenarias, desierto rojo y el nacimiento del río Magdalena."
+  },
+  {
+   "k": "co-lg",
+   "n": "La Guajira",
+   "cap": "Riohacha",
+   "r": "caribe",
+   "lat": 11.544,
+   "lon": -72.907,
+   "intro": "Desierto, mar turquesa y territorio del pueblo wayuu. El punto más al norte de Suramérica."
+  },
+  {
+   "k": "co-ma",
+   "n": "Magdalena",
+   "cap": "Santa Marta",
+   "r": "caribe",
+   "lat": 11.241,
+   "lon": -74.199,
+   "foco": true,
+   "intro": "La Sierra Nevada más alta del mundo junto al mar, la ciudad más antigua del país, la ciénaga más grande de Colombia y los pueblos ribereños del sur. Aquí nace ViveColombia."
+  },
+  {
+   "k": "co-me",
+   "n": "Meta",
+   "cap": "Villavicencio",
+   "r": "orinoquia",
+   "lat": 4.142,
+   "lon": -73.627,
+   "intro": "La puerta del llano, a pocas horas de Bogotá, y el río de los cinco colores."
+  },
+  {
+   "k": "co-na",
+   "n": "Nariño",
+   "cap": "Pasto",
+   "r": "pacifica",
+   "lat": 1.214,
+   "lon": -77.281,
+   "intro": "Volcanes, lagunas de páramo, el santuario sobre un cañón y el Pacífico de Tumaco."
+  },
+  {
+   "k": "co-ns",
+   "n": "Norte de Santander",
+   "cap": "Cúcuta",
+   "r": "andina",
+   "lat": 7.894,
+   "lon": -72.507,
+   "intro": "Frontera con Venezuela, lugar donde se redactó la Constitución de 1821."
+  },
+  {
+   "k": "co-pu",
+   "n": "Putumayo",
+   "cap": "Mocoa",
+   "r": "amazonia",
+   "lat": 1.152,
+   "lon": -76.647,
+   "intro": "Cascadas en el piedemonte amazónico y el valle de las culturas kamëntšá e inga."
+  },
+  {
+   "k": "co-qd",
+   "n": "Quindío",
+   "cap": "Armenia",
+   "r": "andina",
+   "lat": 4.534,
+   "lon": -75.681,
+   "intro": "Palmas de cera, fincas cafeteras y pueblos de colores. Paisaje Cultural Cafetero (UNESCO, 2011)."
+  },
+  {
+   "k": "co-ri",
+   "n": "Risaralda",
+   "cap": "Pereira",
+   "r": "andina",
+   "lat": 4.813,
+   "lon": -75.696,
+   "intro": "Aguas termales, bosques de niebla y vida cafetera."
+  },
+  {
+   "k": "co-sa",
+   "n": "San Andrés y Providencia",
+   "cap": "San Andrés",
+   "r": "insular",
+   "lat": 12.584,
+   "lon": -81.701,
+   "intro": "El mar de los siete colores y la cultura raizal. Reserva de Biosfera Seaflower."
+  },
+  {
+   "k": "co-st",
+   "n": "Santander",
+   "cap": "Bucaramanga",
+   "r": "andina",
+   "lat": 7.119,
+   "lon": -73.123,
+   "intro": "Cañones profundos, deportes de aventura y pueblos de piedra."
+  },
+  {
+   "k": "co-su",
+   "n": "Sucre",
+   "cap": "Sincelejo",
+   "r": "caribe",
+   "lat": 9.305,
+   "lon": -75.398,
+   "intro": "Golfo de Morrosquillo, islas de San Bernardo y sabanas de gaitas."
+  },
+  {
+   "k": "co-to",
+   "n": "Tolima",
+   "cap": "Ibagué",
+   "r": "andina",
+   "lat": 4.439,
+   "lon": -75.232,
+   "intro": "La capital musical de Colombia, pueblos ribereños y nevados."
+  },
+  {
+   "k": "co-vc",
+   "n": "Valle del Cauca",
+   "cap": "Cali",
+   "r": "pacifica",
+   "lat": 3.452,
+   "lon": -76.532,
+   "intro": "Capital mundial de la salsa, caña de azúcar y la puerta al Pacífico."
+  },
+  {
+   "k": "co-vp",
+   "n": "Vaupés",
+   "cap": "Mitú",
+   "r": "amazonia",
+   "lat": 1.198,
+   "lon": -70.173,
+   "intro": "Raudales y comunidades indígenas en lo profundo de la selva."
+  },
+  {
+   "k": "co-vd",
+   "n": "Vichada",
+   "cap": "Puerto Carreño",
+   "r": "orinoquia",
+   "lat": 6.189,
+   "lon": -67.486,
+   "intro": "Donde el Meta se une al Orinoco. Sabanas, raudales y pesca deportiva."
+  }
+ ],
+ "munis": [
+  {
+   "id": "pijino",
+   "n": "Pijiño del Carmen",
+   "lat": 9.333,
+   "lon": -74.45,
+   "foco": true,
+   "intro": "Pueblo ribereño del sur del Magdalena, en la Depresión Momposina, rodeado por la Ciénaga de Pijiño. Ganadería, pesca artesanal y una tradición musical de bandas, chandé y compositores.",
+   "datos": [
+    [
+     "Fundación como municipio",
+     "Ordenanza 001 de 1996 (antes de Santa Ana)"
+    ],
+    [
+     "Población",
+     "13.943 hab."
+    ],
+    [
+     "Superficie",
+     "526 km²"
+    ],
+    [
+     "Temperatura media",
+     "34 °C"
+    ],
+    [
+     "Altitud",
+     "80 m s. n. m."
+    ]
+   ],
+   "historia": "Su primer nombre fue Hatillo de Pijiño, por el ganado que se reunía bajo los árboles de pijiño. Cuenta la leyenda que de la ciénaga salió flotando una tabla con la imagen de la Virgen del Carmen, hoy su patrona. En 1750 José Fernando de Mier y Guerra reservó los playones y la ciénaga para cultivos y cría de ganado.",
+   "llegar": "Por tierra, vía Bosconia – Santa Ana – San Zenón. Por agua, desde El Banco o Mompox. Santa Marta queda a unos 300 km.",
+   "dep": "co-ma"
+  },
+  {
+   "id": "santa-marta",
+   "n": "Santa Marta",
+   "lat": 11.241,
+   "lon": -74.199,
+   "intro": "Fundada el 29 de julio de 1525 por Rodrigo de Bastidas, es la ciudad más antigua de Colombia. Mar, Sierra Nevada y el Parque Tayrona en un mismo lugar.",
+   "datos": [
+    [
+     "Fundación",
+     "29 de julio de 1525"
+    ],
+    [
+     "Clima",
+     "Cálido seco"
+    ]
+   ],
+   "dep": "co-ma"
+  },
+  {
+   "id": "cienaga",
+   "n": "Ciénaga",
+   "lat": 11.006,
+   "lon": -74.247,
+   "intro": "Ciudad de casas republicanas, del Caimán Cienaguero y escenario histórico de la zona bananera. Puerta a la Ciénaga Grande de Santa Marta.",
+   "dep": "co-ma"
+  },
+  {
+   "id": "aracataca",
+   "n": "Aracataca",
+   "lat": 10.592,
+   "lon": -74.191,
+   "intro": "Pueblo natal de Gabriel García Márquez, Premio Nobel de Literatura 1982, y escenario que inspiró Macondo.",
+   "dep": "co-ma"
+  },
+  {
+   "id": "el-banco",
+   "n": "El Banco",
+   "lat": 9,
+   "lon": -73.976,
+   "intro": "Puerto sobre el río Magdalena en el sur del departamento y tierra de José Barros, autor de 'La piragua'.",
+   "dep": "co-ma"
+  },
+  {
+   "id": "sitionuevo",
+   "n": "Sitionuevo",
+   "lat": 10.776,
+   "lon": -74.72,
+   "intro": "Municipio ribereño con pueblos palafíticos dentro de la Ciénaga Grande.",
+   "dep": "co-ma"
+  }
+ ],
+ "items": [
+  {
+   "id": "co-am:parque-nacional-natural-amacayacu",
+   "c": "sitio",
+   "n": "Parque Nacional Natural Amacayacu",
+   "d": "Selva húmeda tropical con senderos, comunidades ticuna y avistamiento de fauna.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:puerto-narino-y-lagos-de-tarapoto",
+   "c": "sitio",
+   "n": "Puerto Nariño y lagos de Tarapoto",
+   "d": "Pueblo sin carros a orillas del Amazonas; en los lagos se ven delfines rosados.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:isla-de-los-micos",
+   "c": "sitio",
+   "n": "Isla de los Micos",
+   "d": "Isla en el río Amazonas conocida por sus monos fraile.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:pirarucu-y-patarashca",
+   "c": "comida",
+   "n": "Pirarucú y patarashca",
+   "d": "Pescado amazónico; la patarashca se asa envuelta en hojas.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:casabe-y-farina",
+   "c": "comida",
+   "n": "Casabe y fariña",
+   "d": "Derivados de la yuca brava, base de la mesa indígena.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:pueblos-ticuna-yagua-y-cocama",
+   "c": "cultura",
+   "n": "Pueblos ticuna, yagua y cocama",
+   "d": "Artesanías en fibra de chambira y saberes de la selva.",
+   "m": null,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-am:festival-de-la-confraternidad-amazonica",
+   "c": "evento",
+   "n": "Festival de la Confraternidad Amazónica",
+   "d": "Encuentro cultural de Colombia, Brasil y Perú en Leticia.",
+   "m": 7,
+   "dep": "co-am",
+   "muni": null
+  },
+  {
+   "id": "co-an:guatape-y-piedra-del-penol",
+   "c": "sitio",
+   "n": "Guatapé y Piedra del Peñol",
+   "d": "Pueblo de zócalos pintados y una roca de 740 escalones con vista al embalse.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:comuna-13",
+   "c": "sitio",
+   "n": "Comuna 13",
+   "d": "Recorrido de grafiti y escaleras eléctricas en Medellín.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:santa-fe-de-antioquia",
+   "c": "sitio",
+   "n": "Santa Fe de Antioquia",
+   "d": "Ciudad colonial y su Puente de Occidente sobre el río Cauca.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:jardin",
+   "c": "sitio",
+   "n": "Jardín",
+   "d": "Pueblo cafetero de plaza arbolada y casas de colores.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:bandeja-paisa",
+   "c": "comida",
+   "n": "Bandeja paisa",
+   "d": "Fríjoles, arroz, chicharrón, carne molida, huevo, arepa, maduro y aguacate.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:mazamorra-y-arepa-paisa",
+   "c": "comida",
+   "n": "Mazamorra y arepa paisa",
+   "d": "Clásicos del desayuno y la tarde antioqueña.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:trova-paisa-y-musica-de-carrilera",
+   "c": "musica",
+   "n": "Trova paisa y música de carrilera",
+   "d": "Duelos de versos improvisados y canciones de despecho.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:silleteros-de-santa-elena",
+   "c": "cultura",
+   "n": "Silleteros de Santa Elena",
+   "d": "Campesinos que cargan arreglos florales en la espalda.",
+   "m": null,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-an:feria-de-las-flores",
+   "c": "evento",
+   "n": "Feria de las Flores",
+   "d": "Desfile de silleteros, caballistas y conciertos en Medellín.",
+   "m": 8,
+   "dep": "co-an",
+   "muni": null
+  },
+  {
+   "id": "co-ar:tame-cuna-de-la-libertad",
+   "c": "sitio",
+   "n": "Tame, cuna de la libertad",
+   "d": "Paso de la Campaña Libertadora de 1819.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-ar:puente-internacional-jose-antonio-paez",
+   "c": "sitio",
+   "n": "Puente Internacional José Antonio Páez",
+   "d": "Cruce sobre el río Arauca hacia Venezuela.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-ar:sabanas-del-rio-arauca",
+   "c": "sitio",
+   "n": "Sabanas del río Arauca",
+   "d": "Atardeceres llaneros y fauna de humedal.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-ar:ternera-a-la-llanera",
+   "c": "comida",
+   "n": "Ternera a la llanera",
+   "d": "Carne asada lentamente en vara junto al fuego.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-ar:joropo",
+   "c": "musica",
+   "n": "Joropo",
+   "d": "Arpa, cuatro y maracas; zapateo y coplas.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-ar:coleo",
+   "c": "cultura",
+   "n": "Coleo",
+   "d": "Deporte llanero de derribar el toro por la cola desde el caballo.",
+   "m": null,
+   "dep": "co-ar",
+   "muni": null
+  },
+  {
+   "id": "co-at:bocas-de-ceniza",
+   "c": "sitio",
+   "n": "Bocas de Ceniza",
+   "d": "Desembocadura del río Magdalena en el mar Caribe.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:gran-malecon-del-rio",
+   "c": "sitio",
+   "n": "Gran Malecón del Río",
+   "d": "Paseo junto al Magdalena en Barranquilla.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:museo-del-caribe",
+   "c": "sitio",
+   "n": "Museo del Caribe",
+   "d": "Museo dedicado a la cultura de la región Caribe.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:usiacuri",
+   "c": "sitio",
+   "n": "Usiacurí",
+   "d": "Pueblo de artesanos de la palma de iraca.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:arroz-de-lisa",
+   "c": "comida",
+   "n": "Arroz de lisa",
+   "d": "Arroz con pescado lisa seco, tradición barranquillera.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:butifarra-soledena",
+   "c": "comida",
+   "n": "Butifarra soledeña",
+   "d": "Embutido pequeño de Soledad, se come con limón y bollo.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:cumbia-son-de-negro-y-porro",
+   "c": "musica",
+   "n": "Cumbia, son de negro y porro",
+   "d": "Ritmos que se viven en comparsas y verbenas.",
+   "m": null,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-at:carnaval-de-barranquilla",
+   "c": "evento",
+   "n": "Carnaval de Barranquilla",
+   "d": "Obra Maestra del Patrimonio Oral e Inmaterial de la Humanidad (UNESCO, 2003).",
+   "m": 2,
+   "dep": "co-at",
+   "muni": null
+  },
+  {
+   "id": "co-bl:ciudad-amurallada-de-cartagena",
+   "c": "sitio",
+   "n": "Ciudad amurallada de Cartagena",
+   "d": "Centro histórico Patrimonio de la Humanidad.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:castillo-de-san-felipe-de-barajas",
+   "c": "sitio",
+   "n": "Castillo de San Felipe de Barajas",
+   "d": "La mayor fortaleza española en América.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:islas-del-rosario",
+   "c": "sitio",
+   "n": "Islas del Rosario",
+   "d": "Archipiélago de aguas claras y arrecifes de coral.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:santa-cruz-de-mompox",
+   "c": "sitio",
+   "n": "Santa Cruz de Mompox",
+   "d": "Pueblo colonial a orillas del río, famoso por su filigrana.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:san-basilio-de-palenque",
+   "c": "cultura",
+   "n": "San Basilio de Palenque",
+   "d": "Primer pueblo libre de América, Patrimonio Inmaterial de la Humanidad.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:arepa-de-huevo-y-posta-negra",
+   "c": "comida",
+   "n": "Arepa de huevo y posta negra",
+   "d": "Fritos callejeros y carne en salsa oscura dulce.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:champeta-y-bullerengue",
+   "c": "musica",
+   "n": "Champeta y bullerengue",
+   "d": "Del picó en los barrios a los cantos de tambor.",
+   "m": null,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-bl:fiestas-de-la-independencia-de-cartagena",
+   "c": "evento",
+   "n": "Fiestas de la Independencia de Cartagena",
+   "d": "Celebración del 11 de noviembre de 1811.",
+   "m": 11,
+   "dep": "co-bl",
+   "muni": null
+  },
+  {
+   "id": "co-by:villa-de-leyva",
+   "c": "sitio",
+   "n": "Villa de Leyva",
+   "d": "Pueblo colonial con una de las plazas empedradas más grandes del país.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:puente-de-boyaca",
+   "c": "sitio",
+   "n": "Puente de Boyacá",
+   "d": "Escenario de la batalla del 7 de agosto de 1819.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:lago-de-tota",
+   "c": "sitio",
+   "n": "Lago de Tota",
+   "d": "El lago natural más grande de Colombia, con Playa Blanca.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:sierra-nevada-del-cocuy",
+   "c": "sitio",
+   "n": "Sierra Nevada del Cocuy",
+   "d": "Picos nevados y lagunas de alta montaña.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:cocido-boyacense",
+   "c": "comida",
+   "n": "Cocido boyacense",
+   "d": "Papas nativas, mazorca, habas y carnes.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:carranga",
+   "c": "musica",
+   "n": "Carranga",
+   "d": "Guitarra, requinto, tiple y guacharaca; música campesina.",
+   "m": null,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-by:festival-de-luces-aguinaldo-boyacense",
+   "c": "evento",
+   "n": "Festival de Luces Aguinaldo Boyacense",
+   "d": "Desfiles y luces navideñas en Tunja.",
+   "m": 12,
+   "dep": "co-by",
+   "muni": null
+  },
+  {
+   "id": "co-cl:parque-nacional-natural-los-nevados",
+   "c": "sitio",
+   "n": "Parque Nacional Natural Los Nevados",
+   "d": "Nevado del Ruiz y paisaje de páramo.",
+   "m": null,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cl:recinto-del-pensamiento",
+   "c": "sitio",
+   "n": "Recinto del Pensamiento",
+   "d": "Jardín botánico, mariposario y bosque de guadua.",
+   "m": null,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cl:salamina",
+   "c": "sitio",
+   "n": "Salamina",
+   "d": "Pueblo patrimonio de arquitectura de bahareque.",
+   "m": null,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cl:cafe-de-origen",
+   "c": "comida",
+   "n": "Café de origen",
+   "d": "Fincas cafeteras con recorridos y catas.",
+   "m": null,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cl:bambuco-y-pasillo",
+   "c": "musica",
+   "n": "Bambuco y pasillo",
+   "d": "Música andina de cuerdas.",
+   "m": null,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cl:feria-de-manizales",
+   "c": "evento",
+   "n": "Feria de Manizales",
+   "d": "Desfiles, reinado y conciertos en enero.",
+   "m": 1,
+   "dep": "co-cl",
+   "muni": null
+  },
+  {
+   "id": "co-cq:serrania-de-chiribiquete",
+   "c": "sitio",
+   "n": "Serranía de Chiribiquete",
+   "d": "Parque Nacional Patrimonio de la Humanidad (2018), con arte rupestre.",
+   "m": null,
+   "dep": "co-cq",
+   "muni": null
+  },
+  {
+   "id": "co-cq:florencia",
+   "c": "sitio",
+   "n": "Florencia",
+   "d": "Puerta de entrada a la Amazonía andina.",
+   "m": null,
+   "dep": "co-cq",
+   "muni": null
+  },
+  {
+   "id": "co-cq:pescado-moqueado",
+   "c": "comida",
+   "n": "Pescado moqueado",
+   "d": "Pescado ahumado lentamente al estilo amazónico.",
+   "m": null,
+   "dep": "co-cq",
+   "muni": null
+  },
+  {
+   "id": "co-cq:saberes-indigenas",
+   "c": "cultura",
+   "n": "Saberes indígenas",
+   "d": "Pueblos uitoto, coreguaje y embera.",
+   "m": null,
+   "dep": "co-cq",
+   "muni": null
+  },
+  {
+   "id": "co-cs:safari-llanero-en-paz-de-ariporo",
+   "c": "sitio",
+   "n": "Safari llanero en Paz de Ariporo",
+   "d": "Chigüiros, venados, babillas y aves en hatos ganaderos.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-cs:pore-y-la-ruta-libertadora",
+   "c": "sitio",
+   "n": "Pore y la Ruta Libertadora",
+   "d": "Pueblo histórico de la Campaña de 1819.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-cs:parque-la-iguana",
+   "c": "sitio",
+   "n": "Parque La Iguana",
+   "d": "Parque natural urbano en Yopal.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-cs:mamona",
+   "c": "comida",
+   "n": "Mamona",
+   "d": "Ternera asada en estacas, plato rey del llano.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-cs:joropo-y-musica-llanera",
+   "c": "musica",
+   "n": "Joropo y música llanera",
+   "d": "Arpa, cuatro y maracas.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-cs:coleo-y-trabajo-de-llano",
+   "c": "cultura",
+   "n": "Coleo y trabajo de llano",
+   "d": "Vaquería y tradiciones del hato.",
+   "m": null,
+   "dep": "co-cs",
+   "muni": null
+  },
+  {
+   "id": "co-ca:centro-historico-de-popayan",
+   "c": "sitio",
+   "n": "Centro histórico de Popayán",
+   "d": "Casas blancas, iglesias coloniales y el Puente del Humilladero.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:parque-arqueologico-tierradentro",
+   "c": "sitio",
+   "n": "Parque Arqueológico Tierradentro",
+   "d": "Hipogeos pintados, Patrimonio de la Humanidad.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:silvia",
+   "c": "sitio",
+   "n": "Silvia",
+   "d": "Mercado de los martes del pueblo misak.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:isla-gorgona",
+   "c": "sitio",
+   "n": "Isla Gorgona",
+   "d": "Parque natural en el Pacífico, ballenas en temporada.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:empanadas-de-pipian",
+   "c": "comida",
+   "n": "Empanadas de pipián",
+   "d": "Masa de maíz rellena de papa y maní.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:chirimia-caucana",
+   "c": "musica",
+   "n": "Chirimía caucana",
+   "d": "Flautas y tambores de tradición andina.",
+   "m": null,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ca:semana-santa-de-popayan",
+   "c": "evento",
+   "n": "Semana Santa de Popayán",
+   "d": "Procesiones Patrimonio Inmaterial de la Humanidad (UNESCO, 2009).",
+   "m": 4,
+   "dep": "co-ca",
+   "muni": null
+  },
+  {
+   "id": "co-ce:rio-guatapuri",
+   "c": "sitio",
+   "n": "Río Guatapurí",
+   "d": "Balneario Hurtado, frente a la estatua de la Sirena.",
+   "m": null,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ce:nabusimake",
+   "c": "sitio",
+   "n": "Nabusímake",
+   "d": "Capital espiritual del pueblo arhuaco en la Sierra Nevada.",
+   "m": null,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ce:cienaga-de-zapatosa",
+   "c": "sitio",
+   "n": "Ciénaga de Zapatosa",
+   "d": "Uno de los humedales de agua dulce más grandes del país.",
+   "m": null,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ce:chivo-guisado",
+   "c": "comida",
+   "n": "Chivo guisado",
+   "d": "Carne de chivo en salsa, con yuca.",
+   "m": null,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ce:vallenato",
+   "c": "musica",
+   "n": "Vallenato",
+   "d": "Acordeón, caja y guacharaca. Patrimonio Inmaterial de la Humanidad.",
+   "m": null,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ce:festival-de-la-leyenda-vallenata",
+   "c": "evento",
+   "n": "Festival de la Leyenda Vallenata",
+   "d": "Concursos de acordeón y piqueria en Valledupar.",
+   "m": 4,
+   "dep": "co-ce",
+   "muni": null
+  },
+  {
+   "id": "co-ch:nuqui-y-bahia-solano",
+   "c": "sitio",
+   "n": "Nuquí y Bahía Solano",
+   "d": "Avistamiento de ballenas jorobadas entre julio y octubre.",
+   "m": null,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-ch:parque-nacional-utria",
+   "c": "sitio",
+   "n": "Parque Nacional Utría",
+   "d": "Ensenada de manglares, selva y playas.",
+   "m": null,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-ch:capurgana-y-sapzurro",
+   "c": "sitio",
+   "n": "Capurganá y Sapzurro",
+   "d": "Playas sin carros cerca de la frontera con Panamá.",
+   "m": null,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-ch:tapao-de-pescado-y-borojo",
+   "c": "comida",
+   "n": "Tapao de pescado y borojó",
+   "d": "Pescado en caldo con plátano; jugo de borojó.",
+   "m": null,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-ch:chirimia-chocoana",
+   "c": "musica",
+   "n": "Chirimía chocoana",
+   "d": "Clarinete, bombardino, tambora y platillos.",
+   "m": null,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-ch:fiestas-de-san-pacho",
+   "c": "evento",
+   "n": "Fiestas de San Pacho",
+   "d": "Patrimonio Inmaterial de la Humanidad (UNESCO, 2012), en Quibdó.",
+   "m": 9,
+   "dep": "co-ch",
+   "muni": null
+  },
+  {
+   "id": "co-co:ronda-del-sinu",
+   "c": "sitio",
+   "n": "Ronda del Sinú",
+   "d": "Parque lineal a orillas del río en Montería.",
+   "m": null,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-co:tuchin",
+   "c": "sitio",
+   "n": "Tuchín",
+   "d": "Capital artesanal del sombrero vueltiao, pueblo zenú.",
+   "m": null,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-co:santa-cruz-de-lorica",
+   "c": "sitio",
+   "n": "Santa Cruz de Lorica",
+   "d": "Mercado y arquitectura de influencia sirio-libanesa.",
+   "m": null,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-co:mote-de-queso",
+   "c": "comida",
+   "n": "Mote de queso",
+   "d": "Sopa de ñame con queso costeño.",
+   "m": null,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-co:porro-y-fandango",
+   "c": "musica",
+   "n": "Porro y fandango",
+   "d": "Bandas de viento pelayeras.",
+   "m": null,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-co:festival-nacional-del-porro",
+   "c": "evento",
+   "n": "Festival Nacional del Porro",
+   "d": "En San Pelayo, a finales de junio.",
+   "m": 6,
+   "dep": "co-co",
+   "muni": null
+  },
+  {
+   "id": "co-cu:catedral-de-sal-de-zipaquira",
+   "c": "sitio",
+   "n": "Catedral de Sal de Zipaquirá",
+   "d": "Templo construido dentro de una mina de sal.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:laguna-de-guatavita",
+   "c": "sitio",
+   "n": "Laguna de Guatavita",
+   "d": "Laguna sagrada muisca ligada a la leyenda de El Dorado.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:suesca",
+   "c": "sitio",
+   "n": "Suesca",
+   "d": "Rocas para escalada junto al río Bogotá.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:bogota-la-candelaria-y-monserrate",
+   "c": "sitio",
+   "n": "Bogotá: La Candelaria y Monserrate",
+   "d": "Centro histórico, Museo del Oro y vista desde el cerro.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:ajiaco-santafereno",
+   "c": "comida",
+   "n": "Ajiaco santafereño",
+   "d": "Sopa de tres papas, pollo, mazorca y guascas.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:almojabanas-y-fresas-con-crema",
+   "c": "comida",
+   "n": "Almojábanas y fresas con crema",
+   "d": "Clásicos de los paseos de fin de semana.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:torbellino-y-musica-andina",
+   "c": "musica",
+   "n": "Torbellino y música andina",
+   "d": "Tiple, requinto y bandola.",
+   "m": null,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-cu:festival-iberoamericano-de-teatro",
+   "c": "evento",
+   "n": "Festival Iberoamericano de Teatro",
+   "d": "Teatro de todo el mundo en Bogotá.",
+   "m": 4,
+   "dep": "co-cu",
+   "muni": null
+  },
+  {
+   "id": "co-gn:cerros-de-mavecure",
+   "c": "sitio",
+   "n": "Cerros de Mavecure",
+   "d": "Tres cerros de roca sobre el río Inírida.",
+   "m": null,
+   "dep": "co-gn",
+   "muni": null
+  },
+  {
+   "id": "co-gn:estrella-fluvial-de-inirida",
+   "c": "sitio",
+   "n": "Estrella Fluvial de Inírida",
+   "d": "Humedal Ramsar donde confluyen grandes ríos.",
+   "m": null,
+   "dep": "co-gn",
+   "muni": null
+  },
+  {
+   "id": "co-gn:pescado-y-manoco",
+   "c": "comida",
+   "n": "Pescado y mañoco",
+   "d": "Mañoco: harina tostada de yuca brava.",
+   "m": null,
+   "dep": "co-gn",
+   "muni": null
+  },
+  {
+   "id": "co-gn:pueblos-puinave-y-curripaco",
+   "c": "cultura",
+   "n": "Pueblos puinave y curripaco",
+   "d": "Artesanía en fibras y cerámica.",
+   "m": null,
+   "dep": "co-gn",
+   "muni": null
+  },
+  {
+   "id": "co-gv:serrania-de-la-lindosa",
+   "c": "sitio",
+   "n": "Serranía de la Lindosa",
+   "d": "Pinturas rupestres de miles de años.",
+   "m": null,
+   "dep": "co-gv",
+   "muni": null
+  },
+  {
+   "id": "co-gv:puerta-de-orion-y-ciudad-de-piedra",
+   "c": "sitio",
+   "n": "Puerta de Orión y Ciudad de Piedra",
+   "d": "Formaciones rocosas naturales.",
+   "m": null,
+   "dep": "co-gv",
+   "muni": null
+  },
+  {
+   "id": "co-gv:pozos-naturales",
+   "c": "sitio",
+   "n": "Pozos Naturales",
+   "d": "Piscinas de roca en el río Tranquilandia.",
+   "m": null,
+   "dep": "co-gv",
+   "muni": null
+  },
+  {
+   "id": "co-gv:pescado-moqueado",
+   "c": "comida",
+   "n": "Pescado moqueado",
+   "d": "Ahumado al estilo indígena.",
+   "m": null,
+   "dep": "co-gv",
+   "muni": null
+  },
+  {
+   "id": "co-hu:parque-arqueologico-de-san-agustin",
+   "c": "sitio",
+   "n": "Parque Arqueológico de San Agustín",
+   "d": "Estatuaria precolombina, Patrimonio de la Humanidad.",
+   "m": null,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-hu:desierto-de-la-tatacoa",
+   "c": "sitio",
+   "n": "Desierto de la Tatacoa",
+   "d": "Bosque seco de tonos rojos y grises; observatorio astronómico.",
+   "m": null,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-hu:estrecho-del-magdalena",
+   "c": "sitio",
+   "n": "Estrecho del Magdalena",
+   "d": "Punto donde el río se estrecha entre rocas.",
+   "m": null,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-hu:asado-huilense",
+   "c": "comida",
+   "n": "Asado huilense",
+   "d": "Cerdo marinado y horneado, con insulso y achiras.",
+   "m": null,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-hu:sanjuanero-huilense",
+   "c": "musica",
+   "n": "Sanjuanero huilense",
+   "d": "Ritmo y danza emblema del departamento.",
+   "m": null,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-hu:festival-folclorico-y-reinado-nacional-del-bambuco",
+   "c": "evento",
+   "n": "Festival Folclórico y Reinado Nacional del Bambuco",
+   "d": "Fiestas de San Pedro en Neiva.",
+   "m": 6,
+   "dep": "co-hu",
+   "muni": null
+  },
+  {
+   "id": "co-lg:cabo-de-la-vela",
+   "c": "sitio",
+   "n": "Cabo de la Vela",
+   "d": "Playas, kitesurf y el cerro Pilón de Azúcar.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:punta-gallinas",
+   "c": "sitio",
+   "n": "Punta Gallinas",
+   "d": "Extremo norte de Suramérica, dunas que caen al mar.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:santuario-de-flamencos",
+   "c": "sitio",
+   "n": "Santuario de Flamencos",
+   "d": "Flamencos rosados cerca de Camarones.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:palomino",
+   "c": "sitio",
+   "n": "Palomino",
+   "d": "Río que baja de la Sierra Nevada hasta el mar.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:friche-de-chivo",
+   "c": "comida",
+   "n": "Friche de chivo",
+   "d": "Chivo frito en su propia grasa, tradición wayuu.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:mochilas-wayuu",
+   "c": "cultura",
+   "n": "Mochilas wayuu",
+   "d": "Tejido que cuenta la cosmovisión wayuu.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-lg:vallenato-y-yonna",
+   "c": "musica",
+   "n": "Vallenato y yonna",
+   "d": "La yonna es la danza ceremonial wayuu.",
+   "m": null,
+   "dep": "co-lg",
+   "muni": null
+  },
+  {
+   "id": "co-ma:cayeye",
+   "c": "comida",
+   "n": "Cayeye",
+   "d": "Guineo verde majado con queso costeño y suero.",
+   "m": null,
+   "dep": "co-ma",
+   "muni": null
+  },
+  {
+   "id": "co-ma:pescado-frito-con-patacon-y-arroz-con-coco",
+   "c": "comida",
+   "n": "Pescado frito con patacón y arroz con coco",
+   "d": "El almuerzo de playa del Caribe.",
+   "m": null,
+   "dep": "co-ma",
+   "muni": null
+  },
+  {
+   "id": "co-ma:cumbia",
+   "c": "musica",
+   "n": "Cumbia",
+   "d": "El Banco es tierra de José Barros, autor de 'La piragua'.",
+   "m": null,
+   "dep": "co-ma",
+   "muni": null
+  },
+  {
+   "id": "co-ma:chande-y-tambora",
+   "c": "musica",
+   "n": "Chandé y tambora",
+   "d": "Bailes cantados de los pueblos ribereños.",
+   "m": null,
+   "dep": "co-ma",
+   "muni": null
+  },
+  {
+   "id": "co-ma:pueblos-de-la-sierra-nevada",
+   "c": "cultura",
+   "n": "Pueblos de la Sierra Nevada",
+   "d": "Kogui, arhuaco, wiwa y kankuamo, guardianes de la Sierra.",
+   "m": null,
+   "dep": "co-ma",
+   "muni": null
+  },
+  {
+   "id": "co-me:cano-cristales",
+   "c": "sitio",
+   "n": "Caño Cristales",
+   "d": "El río de los cinco colores, en La Macarena; temporada de junio a noviembre.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-me:obelisco-de-puerto-lopez",
+   "c": "sitio",
+   "n": "Obelisco de Puerto López",
+   "d": "Marca el centro geográfico de Colombia.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-me:parque-los-fundadores",
+   "c": "sitio",
+   "n": "Parque Los Fundadores",
+   "d": "Monumento al llanero en Villavicencio.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-me:mamona-y-cachama",
+   "c": "comida",
+   "n": "Mamona y cachama",
+   "d": "Carne a la llanera y pescado de río.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-me:joropo",
+   "c": "musica",
+   "n": "Joropo",
+   "d": "Patrimonio de los llanos colombo-venezolanos.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-me:torneo-internacional-del-joropo",
+   "c": "evento",
+   "n": "Torneo Internacional del Joropo",
+   "d": "Desfile y competencias de baile en Villavicencio.",
+   "m": null,
+   "dep": "co-me",
+   "muni": null
+  },
+  {
+   "id": "co-na:santuario-de-las-lajas",
+   "c": "sitio",
+   "n": "Santuario de Las Lajas",
+   "d": "Basílica construida sobre el cañón del río Guáitara, en Ipiales.",
+   "m": null,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-na:laguna-de-la-cocha",
+   "c": "sitio",
+   "n": "Laguna de La Cocha",
+   "d": "Laguna de páramo con la Isla La Corota.",
+   "m": null,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-na:tumaco",
+   "c": "sitio",
+   "n": "Tumaco",
+   "d": "Playas y cultura afro del Pacífico sur.",
+   "m": null,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-na:cuy-asado",
+   "c": "comida",
+   "n": "Cuy asado",
+   "d": "Plato tradicional andino del sur.",
+   "m": null,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-na:empanadas-de-anejo-y-hervidos",
+   "c": "comida",
+   "n": "Empanadas de añejo y hervidos",
+   "d": "Masa fermentada y bebida caliente de frutas.",
+   "m": null,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-na:carnaval-de-negros-y-blancos",
+   "c": "evento",
+   "n": "Carnaval de Negros y Blancos",
+   "d": "Del 2 al 7 de enero en Pasto. Patrimonio de la Humanidad (UNESCO, 2009).",
+   "m": 1,
+   "dep": "co-na",
+   "muni": null
+  },
+  {
+   "id": "co-ns:templo-historico-de-villa-del-rosario",
+   "c": "sitio",
+   "n": "Templo Histórico de Villa del Rosario",
+   "d": "Sede del Congreso de Cúcuta de 1821.",
+   "m": null,
+   "dep": "co-ns",
+   "muni": null
+  },
+  {
+   "id": "co-ns:pamplona",
+   "c": "sitio",
+   "n": "Pamplona",
+   "d": "Ciudad colonial de iglesias y museos.",
+   "m": null,
+   "dep": "co-ns",
+   "muni": null
+  },
+  {
+   "id": "co-ns:ocana",
+   "c": "sitio",
+   "n": "Ocaña",
+   "d": "Ciudad histórica y Columna de la Libertad de los Esclavos.",
+   "m": null,
+   "dep": "co-ns",
+   "muni": null
+  },
+  {
+   "id": "co-ns:pastel-de-garbanzo",
+   "c": "comida",
+   "n": "Pastel de garbanzo",
+   "d": "Masa frita rellena, típica de Cúcuta.",
+   "m": null,
+   "dep": "co-ns",
+   "muni": null
+  },
+  {
+   "id": "co-pu:fin-del-mundo",
+   "c": "sitio",
+   "n": "Fin del Mundo",
+   "d": "Sendero con pozos y una cascada de unos 70 metros, cerca de Mocoa.",
+   "m": null,
+   "dep": "co-pu",
+   "muni": null
+  },
+  {
+   "id": "co-pu:valle-de-sibundoy",
+   "c": "sitio",
+   "n": "Valle de Sibundoy",
+   "d": "Valle andino de los pueblos kamëntšá e inga.",
+   "m": null,
+   "dep": "co-pu",
+   "muni": null
+  },
+  {
+   "id": "co-pu:carnaval-del-perdon-betscnate",
+   "c": "cultura",
+   "n": "Carnaval del Perdón (Bëtscnaté)",
+   "d": "Fiesta mayor del pueblo kamëntšá, antes del Miércoles de Ceniza.",
+   "m": 2,
+   "dep": "co-pu",
+   "muni": null
+  },
+  {
+   "id": "co-qd:valle-de-cocora",
+   "c": "sitio",
+   "n": "Valle de Cocora",
+   "d": "Palmas de cera, el árbol nacional de Colombia.",
+   "m": null,
+   "dep": "co-qd",
+   "muni": null
+  },
+  {
+   "id": "co-qd:salento-y-filandia",
+   "c": "sitio",
+   "n": "Salento y Filandia",
+   "d": "Pueblos de bahareque y miradores.",
+   "m": null,
+   "dep": "co-qd",
+   "muni": null
+  },
+  {
+   "id": "co-qd:parque-del-cafe",
+   "c": "sitio",
+   "n": "Parque del Café",
+   "d": "Parque temático sobre la cultura cafetera.",
+   "m": null,
+   "dep": "co-qd",
+   "muni": null
+  },
+  {
+   "id": "co-qd:trucha-y-cafe",
+   "c": "comida",
+   "n": "Trucha y café",
+   "d": "Trucha al ajillo con patacón y un tinto de finca.",
+   "m": null,
+   "dep": "co-qd",
+   "muni": null
+  },
+  {
+   "id": "co-qd:yipao",
+   "c": "cultura",
+   "n": "Yipao",
+   "d": "Desfile de carros Willys cargados de cosecha.",
+   "m": null,
+   "dep": "co-qd",
+   "muni": null
+  },
+  {
+   "id": "co-ri:termales-de-santa-rosa-de-cabal",
+   "c": "sitio",
+   "n": "Termales de Santa Rosa de Cabal",
+   "d": "Piscinas de agua caliente al pie de una cascada.",
+   "m": null,
+   "dep": "co-ri",
+   "muni": null
+  },
+  {
+   "id": "co-ri:parque-regional-ucumari",
+   "c": "sitio",
+   "n": "Parque Regional Ucumarí",
+   "d": "Bosque de niebla y senderismo.",
+   "m": null,
+   "dep": "co-ri",
+   "muni": null
+  },
+  {
+   "id": "co-ri:bolivar-desnudo",
+   "c": "sitio",
+   "n": "Bolívar Desnudo",
+   "d": "Escultura de Rodrigo Arenas Betancourt en Pereira.",
+   "m": null,
+   "dep": "co-ri",
+   "muni": null
+  },
+  {
+   "id": "co-ri:chorizo-santarrosano",
+   "c": "comida",
+   "n": "Chorizo santarrosano",
+   "d": "Chorizo de Santa Rosa de Cabal con arepa.",
+   "m": null,
+   "dep": "co-ri",
+   "muni": null
+  },
+  {
+   "id": "co-ri:bambuco-y-pasillo",
+   "c": "musica",
+   "n": "Bambuco y pasillo",
+   "d": "Tradición de cuerdas andinas.",
+   "m": null,
+   "dep": "co-ri",
+   "muni": null
+  },
+  {
+   "id": "co-sa:johnny-cay",
+   "c": "sitio",
+   "n": "Johnny Cay",
+   "d": "Cayo de arena blanca frente a San Andrés.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-sa:hoyo-soplador",
+   "c": "sitio",
+   "n": "Hoyo Soplador",
+   "d": "Géiser marino entre rocas coralinas.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-sa:providencia-y-cayo-cangrejo",
+   "c": "sitio",
+   "n": "Providencia y Cayo Cangrejo",
+   "d": "Isla tranquila con arrecife y miradores.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-sa:rondon",
+   "c": "comida",
+   "n": "Rondón",
+   "d": "Sopa de pescado, caracol, yuca y leche de coco.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-sa:calipso-y-mento",
+   "c": "musica",
+   "n": "Calipso y mento",
+   "d": "Ritmos raizales con influencia antillana.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-sa:cultura-raizal",
+   "c": "cultura",
+   "n": "Cultura raizal",
+   "d": "Lengua creole, iglesia bautista y casas de madera.",
+   "m": null,
+   "dep": "co-sa",
+   "muni": null
+  },
+  {
+   "id": "co-st:canon-del-chicamocha",
+   "c": "sitio",
+   "n": "Cañón del Chicamocha",
+   "d": "Parque Nacional del Chicamocha y teleférico.",
+   "m": null,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-st:barichara",
+   "c": "sitio",
+   "n": "Barichara",
+   "d": "Pueblo de piedra y tapia pisada; Camino Real a Guane.",
+   "m": null,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-st:san-gil",
+   "c": "sitio",
+   "n": "San Gil",
+   "d": "Capital del rafting y el parapente.",
+   "m": null,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-st:cabro-pepitoria-y-hormigas-culonas",
+   "c": "comida",
+   "n": "Cabro, pepitoria y hormigas culonas",
+   "d": "Sabores tradicionales santandereanos.",
+   "m": null,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-st:guabina-y-torbellino",
+   "c": "musica",
+   "n": "Guabina y torbellino",
+   "d": "Música campesina andina.",
+   "m": null,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-st:feria-bonita",
+   "c": "evento",
+   "n": "Feria Bonita",
+   "d": "Fiestas de Bucaramanga.",
+   "m": 9,
+   "dep": "co-st",
+   "muni": null
+  },
+  {
+   "id": "co-su:tolu-y-covenas",
+   "c": "sitio",
+   "n": "Tolú y Coveñas",
+   "d": "Playas del Golfo de Morrosquillo.",
+   "m": null,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-su:islas-de-san-bernardo",
+   "c": "sitio",
+   "n": "Islas de San Bernardo",
+   "d": "Archipiélago con islote Santa Cruz.",
+   "m": null,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-su:sampues",
+   "c": "sitio",
+   "n": "Sampués",
+   "d": "Artesanía en caña flecha.",
+   "m": null,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-su:mote-de-queso-y-bollo",
+   "c": "comida",
+   "n": "Mote de queso y bollo",
+   "d": "Tradición sabanera.",
+   "m": null,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-su:porro-y-gaitas",
+   "c": "musica",
+   "n": "Porro y gaitas",
+   "d": "Bandas y fandango de sabana.",
+   "m": null,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-su:fiestas-del-20-de-enero",
+   "c": "evento",
+   "n": "Fiestas del 20 de Enero",
+   "d": "Fiestas tradicionales de Sincelejo.",
+   "m": 1,
+   "dep": "co-su",
+   "muni": null
+  },
+  {
+   "id": "co-to:honda",
+   "c": "sitio",
+   "n": "Honda",
+   "d": "Ciudad de los puentes sobre el río Magdalena.",
+   "m": null,
+   "dep": "co-to",
+   "muni": null
+  },
+  {
+   "id": "co-to:mariquita",
+   "c": "sitio",
+   "n": "Mariquita",
+   "d": "Pueblo histórico de la Expedición Botánica.",
+   "m": null,
+   "dep": "co-to",
+   "muni": null
+  },
+  {
+   "id": "co-to:lechona-y-tamal-tolimense",
+   "c": "comida",
+   "n": "Lechona y tamal tolimense",
+   "d": "Platos insignia del Tolima.",
+   "m": null,
+   "dep": "co-to",
+   "muni": null
+  },
+  {
+   "id": "co-to:bambuco-y-rajalena",
+   "c": "musica",
+   "n": "Bambuco y rajaleña",
+   "d": "Ibagué es llamada Capital Musical de Colombia.",
+   "m": null,
+   "dep": "co-to",
+   "muni": null
+  },
+  {
+   "id": "co-to:festival-folclorico-colombiano",
+   "c": "evento",
+   "n": "Festival Folclórico Colombiano",
+   "d": "Desfiles y danzas en Ibagué.",
+   "m": 6,
+   "dep": "co-to",
+   "muni": null
+  },
+  {
+   "id": "co-vc:buga",
+   "c": "sitio",
+   "n": "Buga",
+   "d": "Basílica del Señor de los Milagros.",
+   "m": null,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:lago-calima",
+   "c": "sitio",
+   "n": "Lago Calima",
+   "d": "Viento para kitesurf y windsurf.",
+   "m": null,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:juanchaco-y-ladrilleros",
+   "c": "sitio",
+   "n": "Juanchaco y Ladrilleros",
+   "d": "Playas del Pacífico y ballenas en temporada.",
+   "m": null,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:sancocho-de-gallina-y-cholado",
+   "c": "comida",
+   "n": "Sancocho de gallina y cholado",
+   "d": "Clásicos caleños, con pandebono y lulada.",
+   "m": null,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:salsa",
+   "c": "musica",
+   "n": "Salsa",
+   "d": "Escuelas de baile y salsotecas en Cali.",
+   "m": null,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:festival-petronio-alvarez",
+   "c": "evento",
+   "n": "Festival Petronio Álvarez",
+   "d": "Música del Pacífico en Cali.",
+   "m": 8,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vc:feria-de-cali",
+   "c": "evento",
+   "n": "Feria de Cali",
+   "d": "Salsódromo y conciertos a fin de año.",
+   "m": 12,
+   "dep": "co-vc",
+   "muni": null
+  },
+  {
+   "id": "co-vp:raudales-del-rio-vaupes",
+   "c": "sitio",
+   "n": "Raudales del río Vaupés",
+   "d": "Rápidos y piedras en el río.",
+   "m": null,
+   "dep": "co-vp",
+   "muni": null
+  },
+  {
+   "id": "co-vp:casabe-y-farina",
+   "c": "comida",
+   "n": "Casabe y fariña",
+   "d": "Base de la alimentación indígena.",
+   "m": null,
+   "dep": "co-vp",
+   "muni": null
+  },
+  {
+   "id": "co-vp:pueblos-cubeo-y-tukano",
+   "c": "cultura",
+   "n": "Pueblos cubeo y tukano",
+   "d": "Malocas y tradiciones amazónicas.",
+   "m": null,
+   "dep": "co-vp",
+   "muni": null
+  },
+  {
+   "id": "co-vd:parque-nacional-el-tuparro",
+   "c": "sitio",
+   "n": "Parque Nacional El Tuparro",
+   "d": "Raudal de Maipures y sabanas con afloramientos rocosos.",
+   "m": null,
+   "dep": "co-vd",
+   "muni": null
+  },
+  {
+   "id": "co-vd:rio-orinoco",
+   "c": "sitio",
+   "n": "Río Orinoco",
+   "d": "Atardeceres en la frontera con Venezuela.",
+   "m": null,
+   "dep": "co-vd",
+   "muni": null
+  },
+  {
+   "id": "co-vd:pescado-del-orinoco",
+   "c": "comida",
+   "n": "Pescado del Orinoco",
+   "d": "Bagre, payara y cachama.",
+   "m": null,
+   "dep": "co-vd",
+   "muni": null
+  },
+  {
+   "id": "co-vd:joropo",
+   "c": "musica",
+   "n": "Joropo",
+   "d": "Música llanera.",
+   "m": null,
+   "dep": "co-vd",
+   "muni": null
+  },
+  {
+   "id": "co-ma:pijino:cienaga-de-pijino",
+   "c": "sitio",
+   "n": "Ciénaga de Pijiño",
+   "d": "Cuerpo de agua de unos 56 km que se comunica con el Brazo de Mompox. Es la base de la pesca y de la vida del pueblo.",
+   "m": null,
+   "lat": 9.36,
+   "lon": -74.47,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:malecon-turistico",
+   "c": "sitio",
+   "n": "Malecón turístico",
+   "d": "Paseo a orillas de la ciénaga, ideal al atardecer.",
+   "m": null,
+   "lat": 9.333,
+   "lon": -74.452,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:isla-verde",
+   "c": "sitio",
+   "n": "Isla Verde",
+   "d": "Islita en la ciénaga El Palmar, cerca de Filadelfia. Se llega en chalupa.",
+   "m": null,
+   "lat": 9.3,
+   "lon": -74.4,
+   "tip": "Coordina la chalupa con pescadores locales.",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:la-arenada",
+   "c": "sitio",
+   "n": "La Arenada",
+   "d": "Balneario natural de la ciénaga.",
+   "m": null,
+   "lat": 9.345,
+   "lon": -74.46,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:la-puntica-del-pozo",
+   "c": "sitio",
+   "n": "La Puntica del Pozo",
+   "d": "Balneario tradicional para bañarse en familia.",
+   "m": null,
+   "lat": 9.34,
+   "lon": -74.445,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:la-vizcaina",
+   "c": "sitio",
+   "n": "La Vizcaína",
+   "d": "Balneario de la Ciénaga de Pijiño.",
+   "m": null,
+   "lat": 9.35,
+   "lon": -74.44,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:parroquia-nuestra-senora-del-carmen",
+   "c": "cultura",
+   "n": "Parroquia Nuestra Señora del Carmen",
+   "d": "Templo considerado patrimonio local, centro de las fiestas patronales.",
+   "m": null,
+   "lat": 9.3335,
+   "lon": -74.4505,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:casa-de-la-cultura-elias-abad-palomino",
+   "c": "cultura",
+   "n": "Casa de la Cultura Elías Abad Palomino",
+   "d": "Lleva el nombre del escritor pijiñero (1917–1951), autor de 'El cristal de los recuerdos'.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:cesta-movil",
+   "c": "cultura",
+   "n": "Cesta móvil",
+   "d": "Deporte creado por el profesor Álvaro Vásquez Oñate: 12 jugadores y una cesta portátil que carga un arquero.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:sancocho-de-pescado-y-de-coroncoro",
+   "c": "comida",
+   "n": "Sancocho de pescado y de coroncoro",
+   "d": "Pescado de la ciénaga cocido con yuca, ñame y plátano.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:bollo-limpio-chicharron-y-queso-costeno",
+   "c": "comida",
+   "n": "Bollo limpio, chicharrón y queso costeño",
+   "d": "La leche de la ganadería local se convierte en queso y suero.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:pebre-de-galapago-y-de-morrocoyo",
+   "c": "comida",
+   "n": "Pebre de galápago y de morrocoyo",
+   "d": "Guisos tradicionales ribereños.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:mazamorra-de-maiz-y-ponche",
+   "c": "comida",
+   "n": "Mazamorra de maíz y ponche",
+   "d": "Bebidas y postres de la cocina campesina.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:dulces-de-frijol-leche-name-y-papaya",
+   "c": "comida",
+   "n": "Dulces de fríjol, leche, ñame y papaya",
+   "d": "Se preparan sobre todo en Semana Santa.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:chande-y-pajarito",
+   "c": "musica",
+   "n": "Chandé y pajarito",
+   "d": "Bailes cantados del sur del Magdalena. El Grupo Renacer de Cabrera cultiva el chandé desde los años cincuenta.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:banda-16-de-julio-la-remenda",
+   "c": "musica",
+   "n": "Banda 16 de Julio, 'La Remendá'",
+   "d": "Banda de vientos nacida en 1937, dirigida por el trompetista Trinidad Jiménez.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:duque-palomino",
+   "c": "musica",
+   "n": "Duque Palomino",
+   "d": "Compositor pijiñero. En 1968 grabó 'Que me coma el tigre' con su combo.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:los-negritos-de-pijino-y-son-pijinero",
+   "c": "musica",
+   "n": "Los Negritos de Pijiño y Son Pijiñero",
+   "d": "Agrupaciones de la tradición musical del pueblo.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:virgen-del-retablo",
+   "c": "evento",
+   "n": "Virgen del Retablo",
+   "d": "Celebración religiosa del 3 de mayo.",
+   "m": 5,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:fiestas-patronales-de-nuestra-senora-del-carmen",
+   "c": "evento",
+   "n": "Fiestas patronales de Nuestra Señora del Carmen",
+   "d": "16 de julio.",
+   "m": 7,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:festival-del-bocachico",
+   "c": "evento",
+   "n": "Festival del Bocachico",
+   "d": "17 de julio, desde 2002, en honor a los pescadores: canotaje, mejor atarrayero, pez más grande y mejor plato de pescado.",
+   "m": 7,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:feria-ganadera",
+   "c": "evento",
+   "n": "Feria Ganadera",
+   "d": "En julio, junto a las fiestas patronales.",
+   "m": 7,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:nuestra-senora-del-transito-cabrera",
+   "c": "evento",
+   "n": "Nuestra Señora del Tránsito (Cabrera)",
+   "d": "15 de agosto.",
+   "m": 8,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:inmaculada-concepcion-casa-blanca",
+   "c": "evento",
+   "n": "Inmaculada Concepción (Casa Blanca)",
+   "d": "8 de diciembre.",
+   "m": 12,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:pijino:festival-de-la-cancion-duque-palomino",
+   "c": "evento",
+   "n": "Festival de la Canción Duque Palomino",
+   "d": "Concurso anual de canción en homenaje al compositor.",
+   "m": null,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "pijino"
+  },
+  {
+   "id": "co-ma:santa-marta:parque-nacional-natural-tayrona",
+   "c": "sitio",
+   "n": "Parque Nacional Natural Tayrona",
+   "d": "Playas entre selva y rocas: Cabo San Juan, Arrecifes y La Piscina.",
+   "m": null,
+   "lat": 11.312,
+   "lon": -74.031,
+   "tip": "Cierra algunas temporadas del año para descanso ecológico; consulta antes de ir.",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:ciudad-perdida-teyuna",
+   "c": "sitio",
+   "n": "Ciudad Perdida (Teyuna)",
+   "d": "Ciudad tairona en la Sierra Nevada. Caminata guiada de 4 a 6 días.",
+   "m": null,
+   "lat": 11.038,
+   "lon": -73.925,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:minca",
+   "c": "sitio",
+   "n": "Minca",
+   "d": "Corregimiento de montaña con cascadas, café y avistamiento de aves.",
+   "m": null,
+   "lat": 11.143,
+   "lon": -74.118,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:taganga",
+   "c": "sitio",
+   "n": "Taganga",
+   "d": "Bahía de pescadores, buceo y atardeceres.",
+   "m": null,
+   "lat": 11.267,
+   "lon": -74.19,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:el-rodadero",
+   "c": "sitio",
+   "n": "El Rodadero",
+   "d": "Playa urbana con malecón y acuario.",
+   "m": null,
+   "lat": 11.205,
+   "lon": -74.227,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:bahia-concha",
+   "c": "sitio",
+   "n": "Bahía Concha",
+   "d": "Playa tranquila dentro del área del Tayrona.",
+   "m": null,
+   "lat": 11.3,
+   "lon": -74.15,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:quinta-de-san-pedro-alejandrino",
+   "c": "cultura",
+   "n": "Quinta de San Pedro Alejandrino",
+   "d": "Hacienda donde murió Simón Bolívar el 17 de diciembre de 1830.",
+   "m": null,
+   "lat": 11.227,
+   "lon": -74.176,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:catedral-basilica-de-santa-marta",
+   "c": "cultura",
+   "n": "Catedral Basílica de Santa Marta",
+   "d": "Una de las iglesias más antiguas del país.",
+   "m": null,
+   "lat": 11.2427,
+   "lon": -74.211,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:museo-del-oro-tairona-casa-de-la-aduana",
+   "c": "cultura",
+   "n": "Museo del Oro Tairona – Casa de la Aduana",
+   "d": "Orfebrería y cultura tairona en el centro histórico.",
+   "m": null,
+   "lat": 11.2436,
+   "lon": -74.2131,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:hotel-boutique-casa-carolina",
+   "c": "hotel",
+   "n": "Hotel Boutique Casa Carolina",
+   "d": "Hotel boutique en el centro histórico.",
+   "m": null,
+   "lat": 11.2425,
+   "lon": -74.2105,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:tamaca-beach-resort",
+   "c": "hotel",
+   "n": "Tamacá Beach Resort",
+   "d": "Hotel frente al mar en El Rodadero.",
+   "m": null,
+   "lat": 11.2,
+   "lon": -74.228,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:masaya-santa-marta",
+   "c": "hotel",
+   "n": "Masaya Santa Marta",
+   "d": "Hostal en el centro histórico.",
+   "m": null,
+   "lat": 11.2438,
+   "lon": -74.2098,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:baguettina",
+   "c": "restaurante",
+   "n": "Baguettina",
+   "d": "Cocina de influencia italiana con sabores locales, en el centro histórico.",
+   "m": null,
+   "lat": 11.2432,
+   "lon": -74.2112,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:guasimo",
+   "c": "restaurante",
+   "n": "Guasimo",
+   "d": "Cocina caribeña: pulpo a la parrilla, calamares y ceviche.",
+   "m": null,
+   "lat": 11.243,
+   "lon": -74.212,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:santa-marta:fiestas-del-mar",
+   "c": "evento",
+   "n": "Fiestas del Mar",
+   "d": "Deportes náuticos, desfiles y reinado a finales de julio.",
+   "m": 7,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "santa-marta"
+  },
+  {
+   "id": "co-ma:cienaga:cienaga-grande-de-santa-marta",
+   "c": "sitio",
+   "n": "Ciénaga Grande de Santa Marta",
+   "d": "El complejo lagunar más grande de Colombia, sitio Ramsar y Reserva de Biosfera.",
+   "m": null,
+   "lat": 10.85,
+   "lon": -74.4,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "cienaga"
+  },
+  {
+   "id": "co-ma:cienaga:plaza-del-centenario",
+   "c": "cultura",
+   "n": "Plaza del Centenario",
+   "d": "Plaza con templete y arquitectura republicana.",
+   "m": null,
+   "lat": 11.007,
+   "lon": -74.25,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "cienaga"
+  },
+  {
+   "id": "co-ma:cienaga:monumento-a-la-masacre-de-las-bananeras",
+   "c": "cultura",
+   "n": "Monumento a la masacre de las bananeras",
+   "d": "Memoria de los hechos de diciembre de 1928 en la estación del tren.",
+   "m": null,
+   "lat": 11.004,
+   "lon": -74.245,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "cienaga"
+  },
+  {
+   "id": "co-ma:cienaga:festival-nacional-del-caiman-cienaguero",
+   "c": "evento",
+   "n": "Festival Nacional del Caimán Cienaguero",
+   "d": "Del 9 al 20 de enero. Desfiles, música y la leyenda de Tomasita. Patrimonio Cultural Inmaterial de la Nación.",
+   "m": 1,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "cienaga"
+  },
+  {
+   "id": "co-ma:aracataca:casa-museo-gabriel-garcia-marquez",
+   "c": "cultura",
+   "n": "Casa Museo Gabriel García Márquez",
+   "d": "Reconstrucción de la casa de los abuelos donde nació Gabo en 1927.",
+   "m": null,
+   "lat": 10.5925,
+   "lon": -74.1905,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "aracataca"
+  },
+  {
+   "id": "co-ma:aracataca:casa-del-telegrafista",
+   "c": "cultura",
+   "n": "Casa del Telegrafista",
+   "d": "Antigua oficina donde trabajó Gabriel Eligio García, padre del escritor.",
+   "m": null,
+   "lat": 10.593,
+   "lon": -74.192,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "aracataca"
+  },
+  {
+   "id": "co-ma:aracataca:estacion-del-tren",
+   "c": "sitio",
+   "n": "Estación del tren",
+   "d": "Estación del ferrocarril bananero.",
+   "m": null,
+   "lat": 10.59,
+   "lon": -74.188,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "aracataca"
+  },
+  {
+   "id": "co-ma:el-banco:orillas-del-rio-magdalena",
+   "c": "sitio",
+   "n": "Orillas del río Magdalena",
+   "d": "Puerto fluvial hacia Mompox y los pueblos ribereños.",
+   "m": null,
+   "lat": 9.002,
+   "lon": -73.975,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "el-banco"
+  },
+  {
+   "id": "co-ma:el-banco:festival-nacional-de-la-cumbia-jose-barros",
+   "c": "evento",
+   "n": "Festival Nacional de la Cumbia José Barros",
+   "d": "Cada agosto: concurso de canción inédita, parejas de baile, desfiles y muestras artesanales.",
+   "m": 8,
+   "lat": null,
+   "lon": null,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "el-banco"
+  },
+  {
+   "id": "co-ma:sitionuevo:nueva-venecia",
+   "c": "sitio",
+   "n": "Nueva Venecia",
+   "d": "Pueblo de casas sobre el agua en la Ciénaga Grande de Santa Marta.",
+   "m": null,
+   "lat": 10.86,
+   "lon": -74.55,
+   "tip": "",
+   "dep": "co-ma",
+   "muni": "sitionuevo"
+  }
+ ],
+ "identidad": {
+  "slogan": "Descubre la esencia de Colombia en un solo lugar",
+  "mision": "Promover el turismo colombiano mediante una plataforma digital innovadora que reúna información confiable sobre destinos turísticos, cultura, gastronomía, música, hotelería y tradiciones de todos los departamentos y municipios del país, contribuyendo al desarrollo económico y social de las regiones.",
+  "vision": "Para el año 2032, ViveColombia será la aplicación turística líder del país, reconocida por brindar información completa y actualizada sobre todos los destinos colombianos.",
+  "equipo": "Proyecto formativo del programa Técnico en Programación de Aplicaciones para Dispositivos Móviles · Institución Educativa Técnica Departamental Pijiño del Carmen · SENA, Centro Acuícola y Agroindustrial de Gaira."
+ }
+}

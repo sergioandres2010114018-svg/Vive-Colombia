@@ -1,0 +1,31 @@
+name: vive_colombia
+description: "ViveColombia: descubre la esencia de Colombia en un solo lugar."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.3.2
+  url_launcher: ^6.3.0
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data.json
+    - assets/logo.png
+    - assets/pin.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icono.png"
+  min_sdk_android: 21
