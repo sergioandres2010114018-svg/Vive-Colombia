@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 import 'data.dart';
+import 'servicios.dart';
 import 'state.dart';
 import 'ui.dart';
 
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: ListenableBuilder(
-        listenable: AppState.i,
+        listenable: Listenable.merge([AppState.i, cambiosCatalogo]),
         builder: (context, _) => ListView(padding: _pad, children: [
           const SizedBox(height: 8),
           Text(
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () => Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MuniScreen(muniId: pij.id))),
+                    context, MaterialPageRoute(builder: (_) => MuniScreen(depK: pij.dep, muniId: pij.id))),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   const BandaRegion(region: 'caribe', height: 140, semilla: 'pijino'),
                   Padding(
@@ -269,14 +270,14 @@ class _DeptoState extends State<DeptoScreen> {
   @override
   Widget build(BuildContext context) {
     final d = Catalogo.dep[widget.depK]!;
-    final items = Catalogo.items.where((i) => i.dep == d.k && i.muni == null).toList();
+    final items = Catalogo.items.where((i) => i.dep == d.k && i.muniId == null).toList();
     final presentes = cats.keys.where((c) => items.any((i) => i.c == c)).toList();
     final munis = Catalogo.munisDe(d.k);
     final total = Catalogo.items.where((i) => i.dep == d.k).length;
     return Scaffold(
       appBar: AppBar(title: Text(d.n), bottom: const Bandera()),
-      body: ListView(padding: EdgeInsets.zero, children: [
-        BandaRegion(region: d.r, height: 170, semilla: d.k),
+      body: ValueListenableBuilder<int>(valueListenable: cambiosCatalogo, builder: (context, _, __) => ListView(padding: EdgeInsets.zero, children: [
+        Foto(url: '', wiki: Wikipedia.depto(d), height: 200, respaldo: BandaRegion(region: d.r, height: 170, semilla: d.k)),
         Padding(
           padding: _pad,
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
@@ -289,8 +290,11 @@ class _DeptoState extends State<DeptoScreen> {
               const SizedBox(width: 8),
               Expanded(child: _Dato('Lugares en la app', '$total')),
             ]),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
+            Align(alignment: Alignment.centerLeft, child: ChipClima(d.lat, d.lon)),
+            const SizedBox(height: 4),
             Text(d.intro, style: const TextStyle(fontSize: 16, height: 1.45)),
+            ResumenWiki(Wikipedia.depto(d)),
             if (munis.isNotEmpty) ...[
               const Titulo('Municipios'),
               Lista([
@@ -298,10 +302,10 @@ class _DeptoState extends State<DeptoScreen> {
                   ListTile(
                     leading: const IconoCat('sitio'),
                     title: Text(m.n, style: const TextStyle(fontWeight: FontWeight.w700)),
-                    subtitle: Text(m.intro, maxLines: 2, overflow: TextOverflow.ellipsis),
+                    subtitle: Text(m.base?.intro ?? 'Agregado desde el panel', maxLines: 2, overflow: TextOverflow.ellipsis),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () => Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => MuniScreen(muniId: m.id))),
+                        context, MaterialPageRoute(builder: (_) => MuniScreen(depK: d.k, muniId: m.id))),
                   ),
               ]),
             ],
@@ -315,7 +319,7 @@ class _DeptoState extends State<DeptoScreen> {
             Lista([for (final i in items.where((i) => f == 'todas' || i.c == f)) ItemTile(i)]),
           ]),
         ),
-      ]),
+      ])),
     );
   }
 }
@@ -342,8 +346,8 @@ class _Dato extends StatelessWidget {
 
 // ---------------------------------------------------------------- Municipio
 class MuniScreen extends StatefulWidget {
-  const MuniScreen({super.key, required this.muniId});
-  final String muniId;
+  const MuniScreen({super.key, required this.depK, required this.muniId});
+  final String depK, muniId;
   @override
   State<MuniScreen> createState() => _MuniState();
 }
@@ -352,57 +356,77 @@ class _MuniState extends State<MuniScreen> {
   String f = 'todas';
   @override
   Widget build(BuildContext context) {
-    final m = Catalogo.muni(widget.muniId)!;
-    final d = Catalogo.dep[m.dep]!;
-    final items = Catalogo.items.where((i) => i.muni == m.id).toList();
-    final presentes = cats.keys.where((c) => items.any((i) => i.c == c)).toList();
-    final cs = Theme.of(context).colorScheme;
-    return Scaffold(
-      appBar: AppBar(title: Text(m.n), bottom: const Bandera()),
-      body: ListView(padding: EdgeInsets.zero, children: [
-        BandaRegion(region: d.r, height: 170, semilla: m.id),
-        Padding(
-          padding: _pad,
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Text('${d.n.toUpperCase()} · REGIÓN ${regiones[d.r]!.nombre.toUpperCase()}',
-                style: const TextStyle(fontSize: 12, letterSpacing: 1, fontWeight: FontWeight.w700)),
-            Text(m.n, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
-            if (m.datos.isNotEmpty) ...[
-              const SizedBox(height: 10),
-              Wrap(spacing: 8, runSpacing: 8, children: [
-                for (final x in m.datos)
-                  SizedBox(
-                    width: (MediaQuery.sizeOf(context).width - 40) / 2,
-                    child: _Dato(x[0], x[1]),
+    return ValueListenableBuilder<int>(
+      valueListenable: cambiosCatalogo,
+      builder: (context, _, __) {
+        final d = Catalogo.dep[widget.depK]!;
+        final m = Catalogo.muni(widget.muniId);
+        final nombre = m?.n ?? Catalogo.muniNombre(widget.depK, widget.muniId);
+        final items = Catalogo.items.where((i) => i.dep == d.k && i.muniId == widget.muniId).toList()
+          ..sort((a, b) => (a.m ?? 0).compareTo(b.m ?? 0));
+        final presentes = cats.keys.where((c) => items.any((i) => i.c == c)).toList();
+        final faltan = ['hotel', 'restaurante'].where((c) => !presentes.contains(c)).toList();
+        final cs = Theme.of(context).colorScheme;
+        final wiki = Wikipedia.muni(nombre, d.n);
+        return Scaffold(
+          appBar: AppBar(title: Text(nombre), bottom: const Bandera()),
+          body: ListView(padding: EdgeInsets.zero, children: [
+            Foto(url: '', wiki: wiki, height: 210, respaldo: BandaRegion(region: d.r, height: 170, semilla: widget.muniId)),
+            Padding(
+              padding: _pad,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                Text('${d.n.toUpperCase()} · REGIÓN ${regiones[d.r]!.nombre.toUpperCase()}',
+                    style: const TextStyle(fontSize: 12, letterSpacing: 1, fontWeight: FontWeight.w700)),
+                Text(nombre, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
+                if (m != null) Align(alignment: Alignment.centerLeft, child: ChipClima(m.lat, m.lon)),
+                if (m != null && m.datos.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Wrap(spacing: 8, runSpacing: 8, children: [
+                    for (final x in m.datos)
+                      SizedBox(
+                        width: (MediaQuery.sizeOf(context).width - 40) / 2,
+                        child: _Dato(x[0], x[1]),
+                      ),
+                  ]),
+                ],
+                const SizedBox(height: 12),
+                if (m != null && m.intro.isNotEmpty) Text(m.intro, style: const TextStyle(fontSize: 16, height: 1.45)),
+                if (m != null && m.historia.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Text(m.historia, style: TextStyle(height: 1.45, color: cs.onSurfaceVariant)),
+                ],
+                if (m != null && m.llegar.isNotEmpty)
+                  Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                        color: cs.surfaceContainerHighest, borderRadius: BorderRadius.circular(12)),
+                    child: Text('Cómo llegar. ${m.llegar}'),
+                  ),
+                ResumenWiki(wiki),
+                Titulo('Qué ver y vivir',
+                    accion: Text('${items.length} lugares', style: TextStyle(color: cs.onSurfaceVariant))),
+                Filtros(
+                  opciones: {'todas': 'Todo', for (final c in presentes) c: cats[c]!.corto},
+                  valor: f,
+                  onCambio: (v) => setState(() => f = v),
+                ),
+                const SizedBox(height: 8),
+                Lista([for (final i in items.where((i) => f == 'todas' || i.c == f)) ItemTile(i)]),
+                if (faltan.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 12),
+                    child: Text(
+                      'Aún no hay ${faltan.map((c) => cats[c]!.nombre.toLowerCase()).join(' ni ')} registrados aquí. '
+                      'Los administradores pueden agregarlos desde Perfil → Panel de contenido.',
+                      style: TextStyle(color: cs.onSurfaceVariant),
+                    ),
                   ),
               ]),
-            ],
-            const SizedBox(height: 12),
-            if (m.intro.isNotEmpty) Text(m.intro, style: const TextStyle(fontSize: 16, height: 1.45)),
-            if (m.historia.isNotEmpty) ...[
-              const SizedBox(height: 10),
-              Text(m.historia, style: TextStyle(height: 1.45, color: cs.onSurfaceVariant)),
-            ],
-            if (m.llegar.isNotEmpty)
-              Container(
-                margin: const EdgeInsets.only(top: 12),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                    color: cs.surfaceContainerHighest, borderRadius: BorderRadius.circular(12)),
-                child: Text('Cómo llegar. ${m.llegar}'),
-              ),
-            Titulo('Qué ver y vivir',
-                accion: Text('${items.length} lugares', style: TextStyle(color: cs.onSurfaceVariant))),
-            Filtros(
-              opciones: {'todas': 'Todo', for (final c in presentes) c: cats[c]!.corto},
-              valor: f,
-              onCambio: (v) => setState(() => f = v),
             ),
-            const SizedBox(height: 8),
-            Lista([for (final i in items.where((i) => f == 'todas' || i.c == f)) ItemTile(i)]),
           ]),
-        ),
-      ]),
+        );
+      },
     );
   }
 }
@@ -416,6 +440,22 @@ class CategoriaScreen extends StatefulWidget {
 }
 
 class _CategoriaState extends State<CategoriaScreen> {
+  @override
+  void initState() {
+    super.initState();
+    cambiosCatalogo.addListener(_refrescar);
+  }
+
+  void _refrescar() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    cambiosCatalogo.removeListener(_refrescar);
+    super.dispose();
+  }
+
   String r = 'todas';
   @override
   Widget build(BuildContext context) {
@@ -457,6 +497,22 @@ class BuscarScreen extends StatefulWidget {
 }
 
 class _BuscarState extends State<BuscarScreen> {
+  @override
+  void initState() {
+    super.initState();
+    cambiosCatalogo.addListener(_refrescar);
+  }
+
+  void _refrescar() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    cambiosCatalogo.removeListener(_refrescar);
+    super.dispose();
+  }
+
   String q = '';
   @override
   Widget build(BuildContext context) {
@@ -519,7 +575,7 @@ class _BuscarState extends State<BuscarScreen> {
                   subtitle: Text(Catalogo.dep[m.dep]?.n ?? ''),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => MuniScreen(muniId: m.id))),
+                      context, MaterialPageRoute(builder: (_) => MuniScreen(depK: m.dep, muniId: m.id))),
                 ),
             ]),
           ],
@@ -541,6 +597,22 @@ class MapaScreen extends StatefulWidget {
 }
 
 class _MapaState extends State<MapaScreen> {
+  @override
+  void initState() {
+    super.initState();
+    cambiosCatalogo.addListener(_refrescar);
+  }
+
+  void _refrescar() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    cambiosCatalogo.removeListener(_refrescar);
+    super.dispose();
+  }
+
   final ctrl = MapController();
   String modo = 'pais';
 
@@ -633,7 +705,7 @@ class ViajesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Mis viajes'), bottom: const Bandera()),
       body: ListenableBuilder(
-        listenable: AppState.i,
+        listenable: Listenable.merge([AppState.i, cambiosCatalogo]),
         builder: (context, _) {
           final st = AppState.i;
           final ruta = st.ruta.map((id) => Catalogo.porId[id]).whereType<Item>().toList();
@@ -711,120 +783,6 @@ class _Vacio extends StatelessWidget {
           ]),
         ),
       );
-}
-
-// ---------------------------------------------------------------- Perfil
-class PerfilScreen extends StatefulWidget {
-  const PerfilScreen({super.key});
-  @override
-  State<PerfilScreen> createState() => _PerfilState();
-}
-
-class _PerfilState extends State<PerfilScreen> {
-  final _form = GlobalKey<FormState>();
-  late final nombre = TextEditingController(text: _p('nombre'));
-  late final correo = TextEditingController(text: _p('correo'));
-  late final origen = TextEditingController(text: _p('origen'));
-  late String tipo = _p('tipo');
-  late final Set<String> intereses =
-      ((AppState.i.perfil['intereses'] ?? <dynamic>[]) as List).map((e) => e.toString()).toSet();
-
-  static String _p(String k) => (AppState.i.perfil[k] ?? '').toString();
-  static const tipos = ['', 'Turista nacional', 'Turista extranjero', 'Estudiante', 'Familia', 'Viajero independiente'];
-
-  @override
-  void dispose() {
-    nombre.dispose();
-    correo.dispose();
-    origen.dispose();
-    super.dispose();
-  }
-
-  void guardar() {
-    if (!_form.currentState!.validate()) return;
-    AppState.i.guardarPerfil({
-      'nombre': nombre.text.trim(),
-      'correo': correo.text.trim(),
-      'origen': origen.text.trim(),
-      'tipo': tipo,
-      'intereses': intereses.toList(),
-    });
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Perfil guardado')));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final registrado = AppState.i.nombre.isNotEmpty;
-    return Scaffold(
-      appBar: AppBar(title: const Text('Perfil'), bottom: const Bandera()),
-      body: Form(
-        key: _form,
-        child: ListView(padding: _pad, children: [
-          Titulo(registrado ? 'Mis datos' : 'Registro'),
-          TextFormField(
-            controller: nombre,
-            decoration: const InputDecoration(labelText: 'Nombre', border: OutlineInputBorder()),
-            validator: (v) => (v == null || v.trim().isEmpty) ? 'Escribe tu nombre' : null,
-          ),
-          const SizedBox(height: 12),
-          TextFormField(
-            controller: correo,
-            keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(labelText: 'Correo', border: OutlineInputBorder()),
-            validator: (v) {
-              final t = (v ?? '').trim();
-              if (t.isEmpty) return null;
-              return RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(t)
-                  ? null
-                  : 'Revisa el correo: nombre@dominio.com';
-            },
-          ),
-          const SizedBox(height: 12),
-          TextFormField(
-            controller: origen,
-            decoration: const InputDecoration(
-                labelText: 'Ciudad o país de origen', border: OutlineInputBorder()),
-          ),
-          const SizedBox(height: 12),
-          DropdownButtonFormField<String>(
-            value: tipos.contains(tipo) ? tipo : '',
-            decoration: const InputDecoration(labelText: 'Viajo como', border: OutlineInputBorder()),
-            items: [
-              for (final t in tipos)
-                DropdownMenuItem(value: t, child: Text(t.isEmpty ? 'Sin especificar' : t)),
-            ],
-            onChanged: (v) => setState(() => tipo = v ?? ''),
-          ),
-          const SizedBox(height: 12),
-          const Text('Me interesa', style: TextStyle(fontWeight: FontWeight.w700)),
-          const SizedBox(height: 6),
-          Wrap(spacing: 8, runSpacing: 4, children: [
-            for (final e in cats.entries)
-              FilterChip(
-                label: Text(e.value.corto),
-                selected: intereses.contains(e.key),
-                onSelected: (s) => setState(() => s ? intereses.add(e.key) : intereses.remove(e.key)),
-              ),
-          ]),
-          const SizedBox(height: 16),
-          FilledButton(
-              onPressed: guardar, child: Text(registrado ? 'Guardar cambios' : 'Crear mi perfil')),
-          const SizedBox(height: 8),
-          const Text('Tu perfil se guarda en este teléfono.', style: TextStyle(fontSize: 13)),
-          const Titulo('Más'),
-          Lista([
-            ListTile(
-              leading: const Icon(Icons.info_outline),
-              title: const Text('Acerca de ViveColombia'),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () =>
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => const AcercaScreen())),
-            ),
-          ]),
-        ]),
-      ),
-    );
-  }
 }
 
 class AcercaScreen extends StatelessWidget {

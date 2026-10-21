@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'cuenta.dart';
 import 'data.dart';
+import 'firebase_options.dart';
 import 'screens.dart';
 import 'state.dart';
 import 'ui.dart';
@@ -10,6 +13,11 @@ Future<void> main() async {
   await Catalogo.cargar();
   await AppState.i.cargar();
   runApp(const ViveColombiaApp());
+  // Firebase se conecta después de mostrar la app; si falla, la app sigue funcionando sin nube.
+  try {
+    await Firebase.initializeApp(options: firebaseOptions);
+    AppState.i.conectarFirebase();
+  } catch (_) {}
 }
 
 class ViveColombiaApp extends StatelessWidget {

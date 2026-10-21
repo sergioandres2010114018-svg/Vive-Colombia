@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'data.dart';
 import 'screens.dart';
+import 'servicios.dart';
 import 'state.dart';
 
 // Colores del logo
@@ -288,7 +289,113 @@ class Titulo extends StatelessWidget {
       );
 }
 
+/// Foto: la del administrador si existe; si no, la de Wikipedia.
+class Foto extends StatelessWidget {
+  const Foto({super.key, required this.url, this.wiki, this.height = 200, this.respaldo});
+  final String url;
+  final Future<InfoWiki?>? wiki;
+  final double height;
+  final Widget? respaldo;
+
+  @override
+  Widget build(BuildContext context) {
+    final vacio = respaldo ?? SizedBox(height: 0, width: double.infinity);
+    if (url.isNotEmpty) return _img(url, null, vacio);
+    if (wiki == null) return vacio;
+    return FutureBuilder<InfoWiki?>(
+      future: wiki,
+      builder: (context, s) {
+        final w = s.data;
+        if (w == null || w.foto.isEmpty) return vacio;
+        return _img(w.foto, 'Foto: Wikipedia', vacio);
+      },
+    );
+  }
+
+  Widget _img(String src, String? credito, Widget vacio) => SizedBox(
+        height: height,
+        width: double.infinity,
+        child: Stack(fit: StackFit.expand, children: [
+          Image.network(
+            src,
+            fit: BoxFit.cover,
+            headers: encabezadosImagen,
+            errorBuilder: (_, __, ___) => vacio,
+            loadingBuilder: (c, child, p) => p == null
+                ? child
+                : ColoredBox(color: Theme.of(c).colorScheme.surfaceContainerHighest),
+          ),
+          if (credito != null)
+            Positioned(
+              right: 6,
+              bottom: 6,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(6)),
+                child: Text(credito, style: const TextStyle(color: Colors.white, fontSize: 10)),
+              ),
+            ),
+        ]),
+      );
+}
+
+/// Resumen de Wikipedia con enlace al artículo.
+class ResumenWiki extends StatelessWidget {
+  const ResumenWiki(this.wiki, {super.key});
+  final Future<InfoWiki?> wiki;
+  @override
+  Widget build(BuildContext context) => FutureBuilder<InfoWiki?>(
+        future: wiki,
+        builder: (context, s) {
+          final w = s.data;
+          if (w == null || w.resumen.isEmpty) return const SizedBox.shrink();
+          return Container(
+            margin: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(12)),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const Text('SEGÚN WIKIPEDIA',
+                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: 1)),
+              const SizedBox(height: 4),
+              Text(w.resumen, style: const TextStyle(height: 1.4)),
+              TextButton(
+                style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                onPressed: () => abrirUrl(context, w.url),
+                child: const Text('Leer más en Wikipedia'),
+              ),
+            ]),
+          );
+        },
+      );
+}
+
+/// Clima actual del lugar.
+class ChipClima extends StatelessWidget {
+  const ChipClima(this.lat, this.lon, {super.key});
+  final double lat, lon;
+  @override
+  Widget build(BuildContext context) => FutureBuilder<Clima?>(
+        future: ServicioClima.actual(lat, lon),
+        builder: (context, s) {
+          final c = s.data;
+          if (c == null) return const SizedBox.shrink();
+          return Chip(
+            avatar: const Icon(Icons.wb_sunny_outlined, size: 18),
+            label: Text('Ahora: ${c.temp.round()} °C · ${c.descripcion}'),
+            visualDensity: VisualDensity.compact,
+          );
+        },
+      );
+}
+
+String urlVideos(Item i) => i.video.isNotEmpty
+    ? i.video
+    : 'https://www.youtube.com/results?search_query=${Uri.encodeComponent('${i.n} ${Catalogo.lugarDe(i)}')}';
+
 void mostrarItem(BuildContext context, Item i) {
+  final conFoto = i.foto.isNotEmpty || i.c == 'sitio' || i.c == 'cultura';
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -300,9 +407,16 @@ void mostrarItem(BuildContext context, Item i) {
         final st = AppState.i;
         final fav = st.esFav(i.id), ruta = st.enRuta(i.id);
         final k = cats[i.c]!;
+        final wiki = (i.c == 'sitio' || i.c == 'cultura' || i.c == 'comida') ? Wikipedia.item(i) : null;
         return SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            if (conFoto)
+              ClipRRect(
+                borderRadius: BorderRadius.circular(14),
+                child: Foto(url: i.foto, wiki: wiki, height: 190),
+              ),
+            const SizedBox(height: 10),
             Wrap(spacing: 6, children: [
               Chip(
                   avatar: Icon(k.icono, size: 18, color: k.color),
@@ -319,12 +433,11 @@ void mostrarItem(BuildContext context, Item i) {
               label: Text(Catalogo.lugarDe(i)),
               onPressed: () {
                 Navigator.pop(ctx);
+                final mu = i.muniId;
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => i.muni != null
-                            ? MuniScreen(muniId: i.muni!)
-                            : DeptoScreen(depK: i.dep)));
+                        builder: (_) => mu != null ? MuniScreen(depK: i.dep, muniId: mu) : DeptoScreen(depK: i.dep)));
               },
             ),
             if (i.d.isNotEmpty) Text(i.d, style: const TextStyle(fontSize: 16, height: 1.45)),
@@ -337,6 +450,7 @@ void mostrarItem(BuildContext context, Item i) {
                     borderRadius: BorderRadius.circular(12)),
                 child: Text('Consejo: ${i.tip}'),
               ),
+            if (wiki != null && i.c != 'comida') ResumenWiki(wiki),
             const SizedBox(height: 16),
             Row(children: [
               Expanded(
@@ -356,14 +470,23 @@ void mostrarItem(BuildContext context, Item i) {
               ),
             ]),
             const SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton.icon(
-                onPressed: () => abrirUrl(ctx, urlMapa(i)),
-                icon: const Icon(Icons.map_outlined),
-                label: const Text('Cómo llegar'),
+            Row(children: [
+              Expanded(
+                child: FilledButton.icon(
+                  onPressed: () => abrirUrl(ctx, urlMapa(i)),
+                  icon: const Icon(Icons.map_outlined),
+                  label: const Text('Cómo llegar'),
+                ),
               ),
-            ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: OutlinedButton.icon(
+                  onPressed: () => abrirUrl(ctx, urlVideos(i)),
+                  icon: const Icon(Icons.play_circle_outline),
+                  label: Text(i.video.isNotEmpty ? 'Ver video' : 'Videos'),
+                ),
+              ),
+            ]),
             if (i.c == 'hotel' || i.c == 'restaurante')
               const Padding(
                 padding: EdgeInsets.only(top: 10),
